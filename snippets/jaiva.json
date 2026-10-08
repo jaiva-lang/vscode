@@ -9,6 +9,11 @@
         "body": ["if (${1:condition}) ->", "\t$0!", "<~ mara ->", "\t", "<~"],
         "description": "If and Mara block"
     },
+    "Short If": {
+        "prefix": "if mara",
+        "body": ["sif (${1:condition}) ?> \t$0!"],
+        "description": "Shorthand If block"
+    },
     "Mara-If Block": {
         "prefix": "mara if",
         "body": ["mara if (${1:condition}) ->", "\t$0!", "<~"],

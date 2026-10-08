@@ -72,7 +72,7 @@
         "keywords": {
             "patterns": [
                 {
-                    "match": "\\b(however|tsea|maak|if|mara|zama zama|kwenza|cima|colonize|chaai|khutla|with|nikhil|idk)\\b",
+                    "match": "\\b(however|tsea|maak|if|mara|zama zama|kwenza|cima|colonize|chaai|khutla|with|nikhil|idk|sif)\\b",
                     "name": "keyword.other"
                 },
                 {
@@ -88,7 +88,7 @@
                     "name": "constant.language.jaiva"
                 },
                 {
-                    "match": "f~|F~|V~|:(?![::])",
+                    "match": "f~|F~|V~|:(?![::])|?>",
                     "name": "entity.name.type.jaiva"
                 }
             ]
