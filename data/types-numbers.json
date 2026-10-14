@@ -1,5 +1,5 @@
 {
-    "version": "6.0.0",
+    "version": "6.1.1",
     "tokens": [
         {
             "type": "TFunction",
@@ -69,6 +69,51 @@
                 false
             ],
             "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~t_strFromByteArr",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "GENERIC",
+                    "description": "Converts the given byte array into a UTF-8 (Standard) string"
+                },
+                {
+                    "tagType": "returns",
+                    "description": "the string"
+                },
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/types/numbers\"!",
+                        "",
+                        "maak byteArr <-| 72, 101, 108, 108, 111!",
+                        "",
+                        "khuluma(t_strFromByteArr(byteArr:::))! @ Prints \"Hello\""
+                    ]
+                },
+                {
+                    "tagType": "parameter",
+                    "description": "A var args byte array (integer values from 0 to 255)",
+                    "var": "arr",
+                    "type": "[]",
+                    "optional": true
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "arr?"
+            ],
+            "isArgOptional": [
+                true
+            ],
+            "varArgs": true,
             "body": null
         }
     ]

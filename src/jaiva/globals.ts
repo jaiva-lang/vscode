@@ -18,7 +18,7 @@ export function load(
     file: string,
     context: import("vscode").ExtensionContext,
 ): Library {
-    if (file.includes("/")) file = file.replace("/", "-");
+    if (file.includes("/")) file = file.replace("/", "-").replace("/", "-");
     const f = path.join(context.extensionPath, "data", file + ".json");
 
     const content = fs.readFileSync(f, "utf-8");

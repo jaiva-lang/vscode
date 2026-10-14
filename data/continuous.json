@@ -1,0 +1,325 @@
+{
+    "version": "6.1.1",
+    "tokens": [
+        {
+            "type": "TStringVar",
+            "name": "C_READ",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "tagType": "GENERIC",
+                    "description": "Key of the reader function if this continuous function closes over a read/input operation"
+                },
+                {
+                    "tagType": "devnote",
+                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "",
+                        "@ Provided \"func\" returns a continuous function.",
+                        "",
+                        "maak cont <- func()!",
+                        "cont(C_READ)()! @ Calls the returned function."
+                    ]
+                }
+            ],
+            "lineNumber": -1,
+            "value": "read"
+        },
+        {
+            "type": "TStringVar",
+            "name": "C_READ",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "tagType": "GENERIC",
+                    "description": "Key of the reader function if this continuous function closes over a read/input operation"
+                },
+                {
+                    "tagType": "devnote",
+                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "",
+                        "@ Provided \"func\" returns a continuous function.",
+                        "",
+                        "maak cont <- func()!",
+                        "cont(C_READ)()! @ Calls the returned function."
+                    ]
+                }
+            ],
+            "lineNumber": -1,
+            "value": "read"
+        },
+        {
+            "type": "TStringVar",
+            "name": "C_WRITE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "tagType": "GENERIC",
+                    "description": "Key of the output function if this continuous function closes over a write/output operation"
+                },
+                {
+                    "tagType": "devnote",
+                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "",
+                        "@ Provided \"func\" returns a continuous function.",
+                        "",
+                        "maak cont <- func()!",
+                        "cont(C_WRITE)()! @ Calls the returned function."
+                    ]
+                }
+            ],
+            "lineNumber": -1,
+            "value": "write"
+        },
+        {
+            "type": "TStringVar",
+            "name": "C_WRITE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "tagType": "GENERIC",
+                    "description": "Key of the output function if this continuous function closes over a write/output operation"
+                },
+                {
+                    "tagType": "devnote",
+                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "",
+                        "@ Provided \"func\" returns a continuous function.",
+                        "",
+                        "maak cont <- func()!",
+                        "cont(C_WRITE)()! @ Calls the returned function."
+                    ]
+                }
+            ],
+            "lineNumber": -1,
+            "value": "write"
+        },
+        {
+            "type": "TStringVar",
+            "name": "C_FLUSH",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "tagType": "GENERIC",
+                    "description": "(Only associated with continuous output functions) Key of the function which flushes the output if the stream can be flushed (In Java terms, is Buffered.)"
+                },
+                {
+                    "tagType": "devnote",
+                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "",
+                        "@ Provided \"func\" returns a continuous function.",
+                        "",
+                        "maak cont <- func()!",
+                        "cont(C_FLUSH)()! @ Calls the returned function."
+                    ]
+                }
+            ],
+            "lineNumber": -1,
+            "value": "flush"
+        },
+        {
+            "type": "TStringVar",
+            "name": "C_EOF",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "tagType": "GENERIC",
+                    "description": "(Only associated with continuous input functions) Key of the function which signals that an input continuous function has reached the end of it's data. Specific semantics depend on implementations as not all input continuous functions may make use of this."
+                },
+                {
+                    "tagType": "devnote",
+                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "",
+                        "@ Provided \"func\" returns a continuous function.",
+                        "",
+                        "maak cont <- func()!",
+                        "cont(C_EOF)()! @ Calls the returned function."
+                    ]
+                }
+            ],
+            "lineNumber": -1,
+            "value": "eof"
+        },
+        {
+            "type": "TStringVar",
+            "name": "C_EOF",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "tagType": "GENERIC",
+                    "description": "(Only associated with continuous input functions) Key of the function which signals that an input continuous function has reached the end of it's data. Specific semantics depend on implementations as not all input continuous functions may make use of this."
+                },
+                {
+                    "tagType": "devnote",
+                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "",
+                        "@ Provided \"func\" returns a continuous function.",
+                        "",
+                        "maak cont <- func()!",
+                        "cont(C_EOF)()! @ Calls the returned function."
+                    ]
+                }
+            ],
+            "lineNumber": -1,
+            "value": "eof"
+        },
+        {
+            "type": "TStringVar",
+            "name": "C_CLOSE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "tagType": "GENERIC",
+                    "description": "Key of the function which closes the continuous function, effectively ending it and freeing resources. This always needs to be called to avoid resource leaks."
+                },
+                {
+                    "tagType": "devnote",
+                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "",
+                        "@ Provided \"func\" returns a continuous function.",
+                        "",
+                        "maak cont <- func()!",
+                        "cont(C_CLOSE)()! @ Calls the returned function."
+                    ]
+                }
+            ],
+            "lineNumber": -1,
+            "value": "close"
+        },
+        {
+            "type": "TStringVar",
+            "name": "C_FINISH",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "tagType": "GENERIC",
+                    "description": "Key of the function which closes the continuous function, effectively ending it and freeing resources. This always needs to be called to avoid resource leaks."
+                },
+                {
+                    "tagType": "devnote",
+                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "",
+                        "@ Provided \"func\" returns a continuous function.",
+                        "",
+                        "maak cont <- func()!",
+                        "cont(C_CLOSE)()! @ Calls the returned function."
+                    ]
+                }
+            ],
+            "lineNumber": -1,
+            "value": "close"
+        },
+        {
+            "type": "TStringVar",
+            "name": "C_CLOSE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "tagType": "GENERIC",
+                    "description": "Key of the function which closes the continuous function, effectively ending it and freeing resources. This always needs to be called to avoid resource leaks."
+                },
+                {
+                    "tagType": "devnote",
+                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "",
+                        "@ Provided \"func\" returns a continuous function.",
+                        "",
+                        "maak cont <- func()!",
+                        "cont(C_CLOSE)()! @ Calls the returned function."
+                    ]
+                }
+            ],
+            "lineNumber": -1,
+            "value": "close"
+        }
+    ]
+}

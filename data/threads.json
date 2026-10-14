@@ -1,0 +1,81 @@
+{
+    "version": "6.1.1",
+    "tokens": [
+        {
+            "type": "TFunction",
+            "name": "F~thread",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "GENERIC",
+                    "description": "Executes the given function in it's own separate thread. If the function aught to fail for some reason, a string and the error message is passed into a secondary cleanup function which is ran on the original thread."
+                },
+                {
+                    "tagType": "returns",
+                    "description": "The thread Id (Long). Idk what you'd do with this"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/threads\"!",
+                        "",
+                        "kwenza f1() ->",
+                        "    khuluma(\"HI\")!",
+                        "    sleep(3000)! @ Sleep for 3 seconds",
+                        "    khuluma(\"Damn.\")!",
+                        "<~",
+                        "",
+                        "kwenza clean(type, err) ->",
+                        "    if (err~ > 0) ->",
+                        "        khuluma(\"An error occured executing f1!\")!",
+                        "        khuluma(err)!",
+                        "    <~",
+                        "<~",
+                        "",
+                        "thread(f1, clean)!",
+                        "khuluma(\"OKAY\")!",
+                        "sleep(2000)!",
+                        "khuluma(\"WOW\")!",
+                        "",
+                        "{",
+                        "Output should be:",
+                        "\"OKAY\"",
+                        "\"HI\"",
+                        "\"WOW\"",
+                        "\"Damn.\"",
+                        "}"
+                    ]
+                },
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "tagType": "parameter",
+                    "description": "The function to execute in it's own thread. A function that should take no args.",
+                    "var": "f",
+                    "type": "F~any",
+                    "optional": false
+                },
+                {
+                    "tagType": "parameter",
+                    "description": "The function to execute as cleanup. This function is expected to take 2 string arguments",
+                    "var": "f2",
+                    "type": "F~any",
+                    "optional": true
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "F~f",
+                "F~f2"
+            ],
+            "isArgOptional": [
+                false,
+                true
+            ],
+            "varArgs": false,
+            "body": null
+        }
+    ]
+}

@@ -1,18 +1,18 @@
 {
-    "version": "6.0.0",
+    "version": "6.1.1",
     "tokens": [
         {
             "type": "TUnknownScalar",
             "name": "path",
             "exportSymbol": true,
-            "lineNumber": 16,
+            "lineNumber": 17,
             "toolTip": " arrays",
             "value": {
                 "type": "TVoidValue",
                 "name": "TVoidValue",
                 "exportSymbol": false,
                 "toolTip": "Jaiva Construct",
-                "lineNumber": 16
+                "lineNumber": 17
             },
             "body": null
         },
@@ -20,14 +20,14 @@
             "type": "TUnknownScalar",
             "name": "description",
             "exportSymbol": false,
-            "lineNumber": 21,
+            "lineNumber": 22,
             "toolTip": " Jaiva's arrays standard library which is itself, made in Jaiva.  It really just contains convenience methods such that you don't  have to index into or look for things yourself.",
             "value": {
                 "type": "TVoidValue",
                 "name": "TVoidValue",
                 "exportSymbol": false,
                 "toolTip": "Jaiva Construct",
-                "lineNumber": 21
+                "lineNumber": 22
             },
             "body": null
         },
@@ -35,7 +35,7 @@
             "type": "TFunction",
             "name": "F~a_remove",
             "exportSymbol": true,
-            "lineNumber": 34,
+            "lineNumber": 35,
             "toolTip": [
                 {
                     "tagType": "GENERIC",
@@ -92,7 +92,7 @@
             "type": "TFunction",
             "name": "F~a_pop",
             "exportSymbol": true,
-            "lineNumber": 57,
+            "lineNumber": 58,
             "toolTip": [
                 {
                     "tagType": "GENERIC",
@@ -144,7 +144,7 @@
             "type": "TFunction",
             "name": "F~a_push",
             "exportSymbol": true,
-            "lineNumber": 75,
+            "lineNumber": 74,
             "toolTip": [
                 {
                     "tagType": "GENERIC",
@@ -203,7 +203,7 @@
             "type": "TFunction",
             "name": "F~a_pushAll",
             "exportSymbol": true,
-            "lineNumber": 92,
+            "lineNumber": 89,
             "toolTip": [
                 {
                     "tagType": "GENERIC",
@@ -253,7 +253,7 @@
             "type": "TFunction",
             "name": "F~a_unshift",
             "exportSymbol": true,
-            "lineNumber": 114,
+            "lineNumber": 109,
             "toolTip": [
                 {
                     "tagType": "GENERIC",
@@ -312,7 +312,7 @@
             "type": "TFunction",
             "name": "F~a_shift",
             "exportSymbol": true,
-            "lineNumber": 134,
+            "lineNumber": 127,
             "toolTip": [
                 {
                     "tagType": "GENERIC",
@@ -369,7 +369,7 @@
             "type": "TFunction",
             "name": "F~a_filter",
             "exportSymbol": true,
-            "lineNumber": 161,
+            "lineNumber": 152,
             "toolTip": [
                 {
                     "tagType": "GENERIC",
@@ -425,7 +425,7 @@
             "type": "TFunction",
             "name": "F~a_replace",
             "exportSymbol": true,
-            "lineNumber": 186,
+            "lineNumber": 174,
             "toolTip": [
                 {
                     "tagType": "GENERIC",
@@ -489,7 +489,7 @@
             "type": "TFunction",
             "name": "F~a_delete",
             "exportSymbol": true,
-            "lineNumber": 214,
+            "lineNumber": 202,
             "toolTip": [
                 {
                     "tagType": "GENERIC",
@@ -544,7 +544,7 @@
             "type": "TFunction",
             "name": "F~a_indexOf",
             "exportSymbol": true,
-            "lineNumber": 243,
+            "lineNumber": 231,
             "toolTip": [
                 {
                     "tagType": "GENERIC",
@@ -601,7 +601,7 @@
             "type": "TFunction",
             "name": "F~a_reverse",
             "exportSymbol": true,
-            "lineNumber": 264,
+            "lineNumber": 248,
             "toolTip": [
                 {
                     "tagType": "GENERIC",
@@ -647,7 +647,7 @@
             "type": "TFunction",
             "name": "F~a_reduce",
             "exportSymbol": true,
-            "lineNumber": 292,
+            "lineNumber": 274,
             "toolTip": [
                 {
                     "tagType": "GENERIC",
@@ -714,7 +714,7 @@
             "type": "TFunction",
             "name": "F~a_map",
             "exportSymbol": true,
-            "lineNumber": 320,
+            "lineNumber": 302,
             "toolTip": [
                 {
                     "tagType": "GENERIC",
@@ -770,7 +770,7 @@
             "type": "TFunction",
             "name": "F~a_from",
             "exportSymbol": true,
-            "lineNumber": 343,
+            "lineNumber": 325,
             "toolTip": [
                 {
                     "tagType": "GENERIC",
@@ -826,7 +826,7 @@
             "type": "TFunction",
             "name": "F~a_forEach",
             "exportSymbol": true,
-            "lineNumber": 396,
+            "lineNumber": 375,
             "toolTip": [
                 {
                     "tagType": "GENERIC",
@@ -882,7 +882,7 @@
             "type": "TFunction",
             "name": "F~a_apply",
             "exportSymbol": true,
-            "lineNumber": 433,
+            "lineNumber": 412,
             "toolTip": [
                 {
                     "tagType": "GENERIC",

@@ -112,6 +112,10 @@ export class SharedValues extends Base {
             "time",
             "time/api",
             "time/zone",
+            "threads",
+            "file/bytes",
+            "file/bytes/const",
+            "continuous",
         ];
 
         globals.forEach((lib) => {

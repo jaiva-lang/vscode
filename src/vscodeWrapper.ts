@@ -91,9 +91,8 @@ export class AllHandler {
 
                 t.shared.write(doc, out);
 
-                const out2 = await t.cli.call([doc.uri.fsPath + "#INTERP"]);
-
-                t.shared.err(doc, out2);
+                // const out2 = await t.cli.call([doc.uri.fsPath + "#INTERP"]);
+                t.shared.err(doc, out);
 
                 t.diagnostics.show(doc);
             })();

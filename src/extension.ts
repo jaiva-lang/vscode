@@ -6,7 +6,7 @@ import { CommandRegistry } from "./commands";
 import { Repositories } from "./repos/repos";
 // import { MultiMap } from "./mmap";
 
-const VERSION = "6.0.0";
+const VERSION = "6.1.1";
 
 export async function activate(context: vscode.ExtensionContext) {
     console.log("JAIVA VSCODE IS ACTIVE!!");
