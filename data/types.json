@@ -1,5 +1,5 @@
 {
-    "version": "6.1.1",
+    "version": "6.1.2",
     "tokens": [
         {
             "type": "TFunction",
@@ -7,16 +7,16 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Converts a given **string** to a number with an optional **radix**."
+                    "description": "Converts a given **string** to a number with an optional **radix**.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "Jaiva integer prefixes [such as _0x_ or _0b_], are checked for first before the radix. If the resulting input is too big, a long may be returned instead of an integer"
+                    "description": "Jaiva integer prefixes [such as _0x_ or _0b_], are checked for first before the radix. If the resulting input is too big, a long may be returned instead of an integer",
+                    "tagType": "devnote"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "A number. (Either a double, integer or long)"
+                    "description": "A number. (Either a double, integer or long)",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "example",
@@ -33,15 +33,15 @@
                     "version": "2.0.0-beta.3"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The input to convert to a number",
+                    "tagType": "parameter",
                     "var": "string",
                     "type": "string",
                     "optional": false
                 },
                 {
-                    "tagType": "parameter",
                     "description": "An optional radix to convert to",
+                    "tagType": "parameter",
                     "var": "radix",
                     "type": "number",
                     "optional": true
@@ -65,16 +65,16 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Converts any input of any given type to a string."
+                    "description": "Converts any input of any given type to a string.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "A string representation of the given input"
+                    "description": "A string representation of the given input",
+                    "tagType": "returns"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "If given an input of `idk`, it will return `idk`. Not a string."
+                    "description": "If given an input of `idk`, it will return `idk`. Not a string.",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",
@@ -90,15 +90,15 @@
                     "version": "2.0.0-beta.3"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The input to convert",
+                    "tagType": "parameter",
                     "var": "input",
                     "type": "idk",
                     "optional": true
                 },
                 {
-                    "tagType": "parameter",
                     "description": "A given radix for integers or longs",
+                    "tagType": "parameter",
                     "var": "radix",
                     "type": "number",
                     "optional": true
@@ -122,20 +122,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the representation of the given double, as a long, where it's bits correspond to the IEEE 754 floating-point \"double format\" bit layout."
+                    "description": "Returns the representation of the given double, as a long, where it's bits correspond to the IEEE 754 floating-point \"double format\" bit layout.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "the bits that represent the double"
+                    "description": "the bits that represent the double",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
                     "version": "6.0.0-beta.5"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The double to get the bits off",
+                    "tagType": "parameter",
                     "var": "double",
                     "type": "number",
                     "optional": false
@@ -157,20 +157,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the double value of which this long is assumed to be a representation of the IEEE 754 floating-point \"double format\" bit layout."
+                    "description": "Returns the double value of which this long is assumed to be a representation of the IEEE 754 floating-point \"double format\" bit layout.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "the double this long's bits represent."
+                    "description": "the double this long's bits represent.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
                     "version": "6.0.0-beta.5"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The representation of the double as a long",
+                    "tagType": "parameter",
                     "var": "long",
                     "type": "number",
                     "optional": false
@@ -192,12 +192,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Converts the given byte array into a UTF-8 (Standard) string"
+                    "description": "Converts the given byte array into a UTF-8 (Standard) string",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "the string"
+                    "description": "the string",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
@@ -214,8 +214,8 @@
                     ]
                 },
                 {
-                    "tagType": "parameter",
                     "description": "A var args byte array (integer values from 0 to 255)",
+                    "tagType": "parameter",
                     "var": "arr",
                     "type": "[]",
                     "optional": true

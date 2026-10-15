@@ -1,5 +1,5 @@
 {
-    "version": "6.1.1",
+    "version": "6.1.2",
     "tokens": [
         {
             "type": "TFunction",
@@ -7,20 +7,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the representation of the given double, as a long, where it's bits correspond to the IEEE 754 floating-point \"double format\" bit layout."
+                    "description": "Returns the representation of the given double, as a long, where it's bits correspond to the IEEE 754 floating-point \"double format\" bit layout.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "the bits that represent the double"
+                    "description": "the bits that represent the double",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
                     "version": "6.0.0-beta.5"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The double to get the bits off",
+                    "tagType": "parameter",
                     "var": "double",
                     "type": "number",
                     "optional": false
@@ -42,20 +42,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the double value of which this long is assumed to be a representation of the IEEE 754 floating-point \"double format\" bit layout."
+                    "description": "Returns the double value of which this long is assumed to be a representation of the IEEE 754 floating-point \"double format\" bit layout.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "the double this long's bits represent."
+                    "description": "the double this long's bits represent.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
                     "version": "6.0.0-beta.5"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The representation of the double as a long",
+                    "tagType": "parameter",
                     "var": "long",
                     "type": "number",
                     "optional": false
@@ -77,12 +77,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Converts the given byte array into a UTF-8 (Standard) string"
+                    "description": "Converts the given byte array into a UTF-8 (Standard) string",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "the string"
+                    "description": "the string",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
@@ -99,8 +99,8 @@
                     ]
                 },
                 {
-                    "tagType": "parameter",
                     "description": "A var args byte array (integer values from 0 to 255)",
+                    "tagType": "parameter",
                     "var": "arr",
                     "type": "[]",
                     "optional": true

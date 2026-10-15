@@ -1,5 +1,5 @@
 {
-    "version": "6.1.1",
+    "version": "6.1.2",
     "tokens": [
         {
             "type": "TFunction",
@@ -7,12 +7,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Executes the given function in it's own separate thread. If the function aught to fail for some reason, a string and the error message is passed into a secondary cleanup function which is ran on the original thread."
+                    "description": "Executes the given function in it's own separate thread. If the function aught to fail for some reason, a string and the error message is passed into a secondary cleanup function which is ran on the original thread.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The thread Id (Long). Idk what you'd do with this"
+                    "description": "The thread Id (Long). Idk what you'd do with this",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "example",
@@ -51,15 +51,15 @@
                     "version": "6.1.0"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The function to execute in it's own thread. A function that should take no args.",
+                    "tagType": "parameter",
                     "var": "f",
                     "type": "F~any",
                     "optional": false
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The function to execute as cleanup. This function is expected to take 2 string arguments",
+                    "tagType": "parameter",
                     "var": "f2",
                     "type": "F~any",
                     "optional": true

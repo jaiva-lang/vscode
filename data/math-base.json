@@ -1,5 +1,5 @@
 {
-    "version": "6.1.1",
+    "version": "6.1.2",
     "tokens": [
         {
             "type": "TFunction",
@@ -7,16 +7,16 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns a random number in the range of `a` and `b`, If both are omitted, returns a random (double) between 0 and 1."
+                    "description": "Returns a random number in the range of `a` and `b`, If both are omitted, returns a random (double) between 0 and 1.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "Unlike other functions, if you provide no arguments, this function returns a double between 0 and 1. If you provide only one argument, it is treated as the upper bound, with the lower bound being 0. If you're coming from a normal programming lang, don't worry both ints are inclusive"
+                    "description": "Unlike other functions, if you provide no arguments, this function returns a double between 0 and 1. If you provide only one argument, it is treated as the upper bound, with the lower bound being 0. If you're coming from a normal programming lang, don't worry both ints are inclusive",
+                    "tagType": "devnote"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "A random number."
+                    "description": "A random number.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "example",
@@ -31,15 +31,15 @@
                     "version": "1.0.0"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The highest number possible between `a` and 0, otherwise the lwoest between `a` and `b` (inclusive)",
+                    "tagType": "parameter",
                     "var": "a",
                     "type": "number",
                     "optional": true
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The highest number possible between a and b (inclusive)",
+                    "tagType": "parameter",
                     "var": "b",
                     "type": "number",
                     "optional": true
@@ -63,12 +63,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Rounds the given real number to an integer."
+                    "description": "Rounds the given real number to an integer.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "An integer value, or a long if the input was already a long"
+                    "description": "An integer value, or a long if the input was already a long",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "example",
@@ -81,8 +81,8 @@
                     "version": "1.0.0"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The input to round",
+                    "tagType": "parameter",
                     "var": "value",
                     "type": "number",
                     "optional": false
@@ -104,12 +104,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the absolute value of a number."
+                    "description": "Returns the absolute value of a number.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "A positive value."
+                    "description": "A positive value.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "example",
@@ -122,8 +122,8 @@
                     "version": "1.0.2"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The value to return the value of.",
+                    "tagType": "parameter",
                     "var": "value",
                     "type": "number",
                     "optional": false
@@ -145,12 +145,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Calculates the (positive) square root of the input value."
+                    "description": "Calculates the (positive) square root of the input value.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The suare root, or idk if the returned value is NaN"
+                    "description": "The suare root, or idk if the returned value is NaN",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "example",
@@ -164,8 +164,8 @@
                     "version": "1.0.2"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The input to sqrt",
+                    "tagType": "parameter",
                     "var": "value",
                     "type": "number",
                     "optional": false
@@ -187,20 +187,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the largest integer less than or equal to the given value."
+                    "description": "Returns the largest integer less than or equal to the given value.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The largest integer less than or equal to the given value."
+                    "description": "The largest integer less than or equal to the given value.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
                     "version": "1.0.2"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The input to round",
+                    "tagType": "parameter",
                     "var": "value",
                     "type": "number",
                     "optional": false
@@ -222,20 +222,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the smallest integer greater than or equal to the given value."
+                    "description": "Returns the smallest integer greater than or equal to the given value.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The smallest integer greater than or equal to the given value."
+                    "description": "The smallest integer greater than or equal to the given value.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
                     "version": "1.0.2"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The input to ceil",
+                    "tagType": "parameter",
                     "var": "value",
                     "type": "number",
                     "optional": false
@@ -257,12 +257,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Calculates the logarithm of a value with the specified base."
+                    "description": "Calculates the logarithm of a value with the specified base.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The logarithm of the value with the specified base."
+                    "description": "The logarithm of the value with the specified base.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "example",
@@ -276,15 +276,15 @@
                     "version": "5.0.0"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The value to calculate the logarithm of.",
+                    "tagType": "parameter",
                     "var": "value",
                     "type": "number",
                     "optional": false
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The base of the logarithm, otherwise 10 is used",
+                    "tagType": "parameter",
                     "var": "base",
                     "type": "number",
                     "optional": true
@@ -308,12 +308,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Calculates the greatest common divisor (GCD) of a list of numbers."
+                    "description": "Calculates the greatest common divisor (GCD) of a list of numbers.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The greatest common divisor of the provided numbers."
+                    "description": "The greatest common divisor of the provided numbers.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "example",
@@ -327,8 +327,8 @@
                     "version": "5.0.0"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "Variable amount of numbers to calculate the greatest common divisor of",
+                    "tagType": "parameter",
                     "var": "nums",
                     "type": "[]",
                     "optional": true
@@ -350,12 +350,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Calculates the lowest common multiple (LCM) of a list of numbers."
+                    "description": "Calculates the lowest common multiple (LCM) of a list of numbers.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The lowest common multiple of the provided numbers."
+                    "description": "The lowest common multiple of the provided numbers.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "example",
@@ -369,8 +369,8 @@
                     "version": "5.0.0"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "Variable amount of numbers to calculate the lowest common multiple of",
+                    "tagType": "parameter",
                     "var": "nums",
                     "type": "[]",
                     "optional": true

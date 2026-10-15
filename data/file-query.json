@@ -1,5 +1,5 @@
 {
-    "version": "6.1.1",
+    "version": "6.1.2",
     "tokens": [
         {
             "type": "TFunction",
@@ -7,12 +7,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Gets the name of the file from a file."
+                    "description": "Gets the name of the file from a file.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The name of the file as a string."
+                    "description": "The name of the file as a string.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
@@ -25,8 +25,8 @@
                     ]
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The file array to get the name from.",
+                    "tagType": "parameter",
                     "var": "file",
                     "type": "[]",
                     "optional": false
@@ -48,12 +48,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Gets the directory path of the file from a file."
+                    "description": "Gets the directory path of the file from a file.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The directory path of the file as a string."
+                    "description": "The directory path of the file as a string.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
@@ -66,8 +66,8 @@
                     ]
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The file array to get the directory path from.",
+                    "tagType": "parameter",
                     "var": "file",
                     "type": "[]",
                     "optional": false
@@ -89,12 +89,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Gets the content of the file from a file."
+                    "description": "Gets the content of the file from a file.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The content of the file as an array of strings."
+                    "description": "The content of the file as an array of strings.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
@@ -107,8 +107,8 @@
                     ]
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The file array to get the content from.",
+                    "tagType": "parameter",
                     "var": "file",
                     "type": "[]",
                     "optional": false
@@ -130,16 +130,16 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Gets the permissions of the file from a file."
+                    "description": "Gets the permissions of the file from a file.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "A closure over the permissions array allowing multiple ways to access the permissions without directly indexing into the array."
+                    "description": "A closure over the permissions array allowing multiple ways to access the permissions without directly indexing into the array.",
+                    "tagType": "returns"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "Unlike other functions, this one may require a bit of functional thinking. It returns a function that you can call to get specific permissions or all permissions at once. The function can take, a full string such as \"read\" or \"r\" and return whether that permission exists, An integer position [read, write, execute], or a Unix-like, 3 length permission string to return a boolean indicating that, that permission stirng matches the permission \"rwx\" or \"r-x\""
+                    "description": "Unlike other functions, this one may require a bit of functional thinking. It returns a function that you can call to get specific permissions or all permissions at once. The function can take, a full string such as \"read\" or \"r\" and return whether that permission exists, An integer position [read, write, execute], or a Unix-like, 3 length permission string to return a boolean indicating that, that permission stirng matches the permission \"rwx\" or \"r-x\"",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "from",
@@ -158,8 +158,8 @@
                     ]
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The file array to get the permissions from.",
+                    "tagType": "parameter",
                     "var": "file",
                     "type": "[]",
                     "optional": false

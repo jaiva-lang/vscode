@@ -1,5 +1,5 @@
 {
-    "version": "6.1.1",
+    "version": "6.1.2",
     "tokens": [
         {
             "type": "TNumberVar",
@@ -7,12 +7,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "The mathematical constant e (Euler's number)"
+                    "description": "The mathematical constant e (Euler's number)",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "Just java.lang.Math.E"
+                    "description": "Just java.lang.Math.E",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",
@@ -30,12 +30,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "The mathematical constant ? (pi)"
+                    "description": "The mathematical constant ? (pi)",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "It's just java.lang.Math.PI"
+                    "description": "It's just java.lang.Math.PI",
+                    "tagType": "devnote"
                 }
             ],
             "lineNumber": -1,
@@ -47,12 +47,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "The mathematical constant ? (tau), which is equal to 2?"
+                    "description": "The mathematical constant ? (tau), which is equal to 2?",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "Just java.lang.Math.TAU"
+                    "description": "Just java.lang.Math.TAU",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",
@@ -73,8 +73,8 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "The golden ratio ? (phi)"
+                    "description": "The golden ratio ? (phi)",
+                    "tagType": "GENERIC"
                 },
                 {
                     "tagType": "example",
@@ -86,8 +86,8 @@
                     ]
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "No note here."
+                    "description": "No note here.",
+                    "tagType": "devnote"
                 }
             ],
             "lineNumber": -1,

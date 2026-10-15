@@ -1,5 +1,5 @@
 {
-    "version": "6.1.1",
+    "version": "6.1.2",
     "tokens": [
         {
             "type": "TStringVar",
@@ -11,12 +11,12 @@
                     "version": "6.1.0"
                 },
                 {
-                    "tagType": "GENERIC",
-                    "description": "Key of the reader function if this continuous function closes over a read/input operation"
+                    "description": "Key of the reader function if this continuous function closes over a read/input operation",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                    "description": "[Continuous Function](../Continuous-Functions.md)",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",
@@ -35,7 +35,7 @@
         },
         {
             "type": "TStringVar",
-            "name": "C_READ",
+            "name": "C_INPUT",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -43,12 +43,12 @@
                     "version": "6.1.0"
                 },
                 {
-                    "tagType": "GENERIC",
-                    "description": "Key of the reader function if this continuous function closes over a read/input operation"
+                    "description": "Key of the reader function if this continuous function closes over a read/input operation",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                    "description": "[Continuous Function](../Continuous-Functions.md)",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",
@@ -75,12 +75,12 @@
                     "version": "6.1.0"
                 },
                 {
-                    "tagType": "GENERIC",
-                    "description": "Key of the output function if this continuous function closes over a write/output operation"
+                    "description": "Key of the output function if this continuous function closes over a write/output operation",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                    "description": "[Continuous Function](../Continuous-Functions.md)",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",
@@ -99,7 +99,7 @@
         },
         {
             "type": "TStringVar",
-            "name": "C_WRITE",
+            "name": "C_OUTPUT",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -107,12 +107,12 @@
                     "version": "6.1.0"
                 },
                 {
-                    "tagType": "GENERIC",
-                    "description": "Key of the output function if this continuous function closes over a write/output operation"
+                    "description": "Key of the output function if this continuous function closes over a write/output operation",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                    "description": "[Continuous Function](../Continuous-Functions.md)",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",
@@ -139,12 +139,12 @@
                     "version": "6.1.0"
                 },
                 {
-                    "tagType": "GENERIC",
-                    "description": "(Only associated with continuous output functions) Key of the function which flushes the output if the stream can be flushed (In Java terms, is Buffered.)"
+                    "description": "(Only associated with continuous output functions) Key of the function which flushes the output if the stream can be flushed (In Java terms, is Buffered.)",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                    "description": "[Continuous Function](../Continuous-Functions.md)",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",
@@ -171,12 +171,12 @@
                     "version": "6.1.0"
                 },
                 {
-                    "tagType": "GENERIC",
-                    "description": "(Only associated with continuous input functions) Key of the function which signals that an input continuous function has reached the end of it's data. Specific semantics depend on implementations as not all input continuous functions may make use of this."
+                    "description": "(Only associated with continuous input functions) Key of the function which signals that an input continuous function has reached the end of it's data. Specific semantics depend on implementations as not all input continuous functions may make use of this.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                    "description": "[Continuous Function](../Continuous-Functions.md)",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",
@@ -195,7 +195,7 @@
         },
         {
             "type": "TStringVar",
-            "name": "C_EOF",
+            "name": "C_END_OF_FILE",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -203,12 +203,12 @@
                     "version": "6.1.0"
                 },
                 {
-                    "tagType": "GENERIC",
-                    "description": "(Only associated with continuous input functions) Key of the function which signals that an input continuous function has reached the end of it's data. Specific semantics depend on implementations as not all input continuous functions may make use of this."
+                    "description": "(Only associated with continuous input functions) Key of the function which signals that an input continuous function has reached the end of it's data. Specific semantics depend on implementations as not all input continuous functions may make use of this.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                    "description": "[Continuous Function](../Continuous-Functions.md)",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",
@@ -235,12 +235,44 @@
                     "version": "6.1.0"
                 },
                 {
-                    "tagType": "GENERIC",
-                    "description": "Key of the function which closes the continuous function, effectively ending it and freeing resources. This always needs to be called to avoid resource leaks."
+                    "description": "Key of the function which closes the continuous function, effectively ending it and freeing resources. This always needs to be called to avoid resource leaks.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                    "description": "[Continuous Function](../Continuous-Functions.md)",
+                    "tagType": "devnote"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "",
+                        "@ Provided \"func\" returns a continuous function.",
+                        "",
+                        "maak cont <- func()!",
+                        "cont(C_CLOSE)()! @ Calls the returned function."
+                    ]
+                }
+            ],
+            "lineNumber": -1,
+            "value": "close"
+        },
+        {
+            "type": "TStringVar",
+            "name": "C_END",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Key of the function which closes the continuous function, effectively ending it and freeing resources. This always needs to be called to avoid resource leaks.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "[Continuous Function](../Continuous-Functions.md)",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",
@@ -267,44 +299,12 @@
                     "version": "6.1.0"
                 },
                 {
-                    "tagType": "GENERIC",
-                    "description": "Key of the function which closes the continuous function, effectively ending it and freeing resources. This always needs to be called to avoid resource leaks."
+                    "description": "Key of the function which closes the continuous function, effectively ending it and freeing resources. This always needs to be called to avoid resource leaks.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "[Continuous Function](../Continuous-Functions.md)"
-                },
-                {
-                    "tagType": "example",
-                    "codeblock": [
-                        "tsea \"jaiva/continuous\"!",
-                        "",
-                        "@ Provided \"func\" returns a continuous function.",
-                        "",
-                        "maak cont <- func()!",
-                        "cont(C_CLOSE)()! @ Calls the returned function."
-                    ]
-                }
-            ],
-            "lineNumber": -1,
-            "value": "close"
-        },
-        {
-            "type": "TStringVar",
-            "name": "C_CLOSE",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "tagType": "GENERIC",
-                    "description": "Key of the function which closes the continuous function, effectively ending it and freeing resources. This always needs to be called to avoid resource leaks."
-                },
-                {
-                    "tagType": "devnote",
-                    "description": "[Continuous Function](../Continuous-Functions.md)"
+                    "description": "[Continuous Function](../Continuous-Functions.md)",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",

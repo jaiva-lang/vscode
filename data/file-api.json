@@ -1,5 +1,5 @@
 {
-    "version": "6.1.1",
+    "version": "6.1.2",
     "tokens": [
         {
             "type": "TStringVar",
@@ -7,12 +7,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Variable that holds the current file's name"
+                    "description": "Variable that holds the current file's name",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "If you call this within the REPL, or somehow the filePath is null, it holds \"FileApi\""
+                    "description": "If you call this within the REPL, or somehow the filePath is null, it holds \"FileApi\"",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "from",
@@ -36,12 +36,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Variable that holds the current file's directory."
+                    "description": "Variable that holds the current file's directory.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "If you call this within the REPL, or somehow the filePath is null, it holds \"FileApi\""
+                    "description": "If you call this within the REPL, or somehow the filePath is null, it holds \"FileApi\"",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "from",
@@ -63,16 +63,16 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the current file's properties and contents."
+                    "description": "Returns the current file's properties and contents.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "Returns an array containing the current file's properties \n [fileName, fileDir, [contents], [canRead?, canWrite?, canExecute?]]"
+                    "description": "Returns an array containing the current file's properties \\n [fileName, fileDir, [contents], [canRead?, canWrite?, canExecute?]]",
+                    "tagType": "devnote"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "Once again, if we are inside the REPL, we just return static content. (Does not represent the REPL)"
+                    "description": "Once again, if we are inside the REPL, we just return static content. (Does not represent the REPL)",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "from",
@@ -97,12 +97,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Finds the specified file and retrieves it's contents."
+                    "description": "Finds the specified file and retrieves it's contents.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "Returns an array containing the properties of the file at the given `path` \n [fileName, fileDir, [contents], [canRead?, canWrite?, canExecute?]]"
+                    "description": "Returns an array containing the properties of the file at the given `path` \\n [fileName, fileDir, [contents], [canRead?, canWrite?, canExecute?]]",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "example",
@@ -117,8 +117,8 @@
                     "version": "1.0.1"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The path to the file you want to fetch.",
+                    "tagType": "parameter",
                     "var": "path",
                     "type": "string",
                     "optional": false
@@ -140,12 +140,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Creates a new file with the given properties at the given file."
+                    "description": "Creates a new file with the given properties at the given file.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "A boolean `true` if the file could be created. `false` otherwise."
+                    "description": "A boolean `true` if the file could be created. `false` otherwise.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "example",
@@ -166,36 +166,36 @@
                     "version": "2.0.1"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The path to the new file to create. Along with the file name and extension",
+                    "tagType": "parameter",
                     "var": "path",
                     "type": "string",
                     "optional": false
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The content the file should hold. Either a string or an array of strings.",
+                    "tagType": "parameter",
                     "var": "content",
                     "type": "idk",
                     "optional": false
                 },
                 {
-                    "tagType": "parameter",
                     "description": "Whether or not the file can be read. Defaults to true",
+                    "tagType": "parameter",
                     "var": "canRead",
                     "type": "boolean",
                     "optional": true
                 },
                 {
-                    "tagType": "parameter",
                     "description": "Whether the file can be written to or not. Defaults to true",
+                    "tagType": "parameter",
                     "var": "canWrite",
                     "type": "boolean",
                     "optional": true
                 },
                 {
-                    "tagType": "parameter",
                     "description": "Whether the file can be executed or not. Defaults to true.",
+                    "tagType": "parameter",
                     "var": "canExecute",
                     "type": "boolean",
                     "optional": true

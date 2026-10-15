@@ -1,5 +1,5 @@
 {
-    "version": "6.1.1",
+    "version": "6.1.2",
     "tokens": [
         {
             "type": "TFunction",
@@ -7,12 +7,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Attempts to return the symbol's corresponding Java class in string form. If you're using this then you def don't know what you're doing."
+                    "description": "Attempts to return the symbol's corresponding Java class in string form. If you're using this then you def don't know what you're doing.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The .toString() class representation of the given variable's token"
+                    "description": "The .toString() class representation of the given variable's token",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
@@ -27,8 +27,8 @@
                     ]
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The value to return it's token symbol for",
+                    "tagType": "parameter",
                     "var": "var",
                     "type": "idk",
                     "optional": false
@@ -60,8 +60,8 @@
                     ]
                 },
                 {
-                    "tagType": "GENERIC",
-                    "description": "An array containing jaiva's reserved keywords that you cannot use as symbol names."
+                    "description": "An array containing jaiva's reserved keywords that you cannot use as symbol names.",
+                    "tagType": "GENERIC"
                 }
             ],
             "lineNumber": -1,
@@ -95,8 +95,8 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "What do you think this returns."
+                    "description": "What do you think this returns.",
+                    "tagType": "GENERIC"
                 },
                 {
                     "tagType": "example",
@@ -110,7 +110,7 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "6.1.1"
+            "value": "6.1.2"
         },
         {
             "type": "TFunction",
@@ -118,12 +118,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Attempts to flatten (at the top level) the given arrays array1 and array2 into 1 single array."
+                    "description": "Attempts to flatten (at the top level) the given arrays array1 and array2 into 1 single array.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "If there are any type mismatches in array1, it will be ignored and the same check is done to array2 and so on. Therefore this function will **always** return an array, whether or not it was successful."
+                    "description": "If there are any type mismatches in array1, it will be ignored and the same check is done to array2 and so on. Therefore this function will **always** return an array, whether or not it was successful.",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "from",
@@ -139,8 +139,8 @@
                     ]
                 },
                 {
-                    "tagType": "parameter",
                     "description": "Variable amount of arrays to input",
+                    "tagType": "parameter",
                     "var": "arrays",
                     "type": "[]",
                     "optional": true
@@ -162,12 +162,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Pause execution of the interpreter for n amount of milliseconds."
+                    "description": "Pause execution of the interpreter for n amount of milliseconds.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "(Keep in mind this function still has to take your value and turn it into a Java primitive and other things, so the delay might not be exact. If you're looking for accuracy maybe remove x amount of ms till it's accurate.)"
+                    "description": "(Keep in mind this function still has to take your value and turn it into a Java primitive and other things, so the delay might not be exact. If you're looking for accuracy maybe remove x amount of ms till it's accurate.)",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "from",
@@ -182,8 +182,8 @@
                     ]
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The amount of milliseconds to sleep for",
+                    "tagType": "parameter",
                     "var": "milliseconds",
                     "type": "number",
                     "optional": false
@@ -205,12 +205,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the type of any given input."
+                    "description": "Returns the type of any given input.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "Returns the string form of the typ, which could be \"array\", \"string\", \"boolean\", \"number\", \"function\", or the primitive idk.  If you require a more precise answer than number use typeOfNumber"
+                    "description": "Returns the string form of the typ, which could be \"array\", \"string\", \"boolean\", \"number\", \"function\", or the primitive idk.  If you require a more precise answer than number use typeOfNumber",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
@@ -231,8 +231,8 @@
                     ]
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The input to check the type against",
+                    "tagType": "parameter",
                     "var": "input",
                     "type": "idk",
                     "optional": true
@@ -254,12 +254,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the type of a given number input. which in Java terms is either an integer, double or long"
+                    "description": "Returns the type of a given number input. which in Java terms is either an integer, double or long",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "Returns the string form of the type, which could be \"integer\", \"double\", \"long\", or the primitive idk."
+                    "description": "Returns the string form of the type, which could be \"integer\", \"double\", \"long\", or the primitive idk.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
@@ -278,8 +278,8 @@
                     ]
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The input to check the type against",
+                    "tagType": "parameter",
                     "var": "input",
                     "type": "idk",
                     "optional": true
@@ -301,12 +301,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Creates an array literal from the given elements. This is useful if you want to createFunction an array without declaring it to a variable. For example, `arrLit(1, 2, 3)` will return `[1, 2, 3]`. This is needed as Jaiva doesnt have square bracket syntax"
+                    "description": "Creates an array literal from the given elements. This is useful if you want to createFunction an array without declaring it to a variable. For example, `arrLit(1, 2, 3)` will return `[1, 2, 3]`. This is needed as Jaiva doesnt have square bracket syntax",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The input given, as an array"
+                    "description": "The input given, as an array",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
@@ -324,8 +324,8 @@
                     ]
                 },
                 {
-                    "tagType": "parameter",
                     "description": "Variable amount of elements to take in and turn into a single array.",
+                    "tagType": "parameter",
                     "var": "elements",
                     "type": "[]",
                     "optional": true
@@ -347,12 +347,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "returns",
-                    "description": "idk"
+                    "description": "idk",
+                    "tagType": "returns"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "The following are accepted strings: \n    \"sw\" to suppress all warnings. \n    \"ew\" to elevate all warnings. \n    \"constant\" to make all symbols given constant. and \n    \"strict\" which toggles \"ew\" and \"constant\"\n"
+                    "description": "The following are accepted strings: \n    \"sw\" to suppress all warnings. \n    \"ew\" to elevate all warnings. \n    \"constant\" to make all symbols given constant. and \n    \"strict\" which toggles \"ew\" and \"constant\"\n",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",
@@ -378,8 +378,8 @@
                     "version": "4.1.1"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "variable amount of strings to input.",
+                    "tagType": "parameter",
                     "var": "string",
                     "type": "[]",
                     "optional": true
@@ -401,12 +401,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the caller value provided to this file if this file was run by another java program."
+                    "description": "Returns the caller value provided to this file if this file was run by another java program.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The caller value"
+                    "description": "The caller value",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
@@ -433,12 +433,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Prints any given input to the console."
+                    "description": "Prints any given input to the console.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "idk"
+                    "description": "idk",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
@@ -455,15 +455,15 @@
                     ]
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The message to print.",
+                    "tagType": "parameter",
                     "var": "msg",
                     "type": "idk",
                     "optional": true
                 },
                 {
-                    "tagType": "parameter",
                     "description": "If true, no new line is printed after the message. Defaults to false.",
+                    "tagType": "parameter",
                     "var": "removenewLn",
                     "type": "boolean",
                     "optional": true
@@ -487,16 +487,16 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Listens for input from the console."
+                    "description": "Listens for input from the console.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The input given from the console as a string"
+                    "description": "The input given from the console as a string",
+                    "tagType": "returns"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "GithubBlockQuote: This will pause all execution until input is given."
+                    "description": "GithubBlockQuote: This will pause all execution until input is given.",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "from",
@@ -523,16 +523,16 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Clears the console."
+                    "description": "Clears the console.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "idk"
+                    "description": "idk",
+                    "tagType": "returns"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "The effectiveness of this function depends on the terminal's support for ANSI escape codes."
+                    "description": "The effectiveness of this function depends on the terminal's support for ANSI escape codes.",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "from",
@@ -557,20 +557,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "The command-line arguments passed to the Jaiva command."
+                    "description": "The command-line arguments passed to the Jaiva command.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "An array of strings, where each string is a command-line argument."
+                    "description": "An array of strings, where each string is a command-line argument.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
                     "version": "1.0.2"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "This is the raw arguments given from Main.args[], including Jaiva-specific arguments."
+                    "description": "This is the raw arguments given from Main.args[], including Jaiva-specific arguments.",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",
@@ -592,12 +592,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "The command-line arguments without Jaiva-specific arguments."
+                    "description": "The command-line arguments without Jaiva-specific arguments.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "An array of strings, representing the sanitized command-line arguments."
+                    "description": "An array of strings, representing the sanitized command-line arguments.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",

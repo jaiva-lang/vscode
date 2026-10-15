@@ -1,5 +1,5 @@
 {
-    "version": "6.1.1",
+    "version": "6.1.2",
     "tokens": [
         {
             "type": "TFunction",
@@ -7,12 +7,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the current time in milliseconds since the Unix epoch."
+                    "description": "Returns the current time in milliseconds since the Unix epoch.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "A number representing the current time in milliseconds."
+                    "description": "A number representing the current time in milliseconds.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
@@ -31,20 +31,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Converts milliseconds to seconds."
+                    "description": "Converts milliseconds to seconds.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "A number representing the converted seconds."
+                    "description": "A number representing the converted seconds.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
                     "version": "5.0.0"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The number of milliseconds to convert.",
+                    "tagType": "parameter",
                     "var": "milliseconds",
                     "type": "number",
                     "optional": false
@@ -66,16 +66,16 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Parses a date string into milliseconds since the Unix epoch."
+                    "description": "Parses a date string into milliseconds since the Unix epoch.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "A number representing the parsed date in milliseconds."
+                    "description": "A number representing the parsed date in milliseconds.",
+                    "tagType": "returns"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "If no timezone is provided, a default timezone of UTC is used."
+                    "description": "If no timezone is provided, a default timezone of UTC is used.",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",
@@ -91,22 +91,22 @@
                     "version": "5.0.0"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The date string to parse.",
+                    "tagType": "parameter",
                     "var": "dateString",
                     "type": "string",
                     "optional": false
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The format of the date string (e.g. \"yyyy-MM-dd HH:mm:ss\").Defaults to ISO_LOCAL_DATE_TIME,",
+                    "tagType": "parameter",
                     "var": "format",
                     "type": "string",
                     "optional": true
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The timezone to parse this date into. You can either put a magic string yourself or use the constants within \"jaiva/time/zone\"",
+                    "tagType": "parameter",
                     "var": "timezone",
                     "type": "string",
                     "optional": true
@@ -132,8 +132,8 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the maximum possible value for a time in milliseconds (Long.MAX_VALUE)."
+                    "description": "Returns the maximum possible value for a time in milliseconds (Long.MAX_VALUE).",
+                    "tagType": "GENERIC"
                 },
                 {
                     "tagType": "from",

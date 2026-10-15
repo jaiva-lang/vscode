@@ -1,5 +1,5 @@
 {
-    "version": "6.1.1",
+    "version": "6.1.2",
     "tokens": [
         {
             "type": "TFunction",
@@ -7,20 +7,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the sine of a number in radians."
+                    "description": "Returns the sine of a number in radians.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The sine of the given value in radians."
+                    "description": "The sine of the given value in radians.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
                     "version": "1.0.2"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The value in radians",
+                    "tagType": "parameter",
                     "var": "value",
                     "type": "number",
                     "optional": false
@@ -42,20 +42,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the cosine of a number in radians."
+                    "description": "Returns the cosine of a number in radians.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The cosine of the given value in radians."
+                    "description": "The cosine of the given value in radians.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
                     "version": "1.0.2"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The value in radians",
+                    "tagType": "parameter",
                     "var": "value",
                     "type": "number",
                     "optional": false
@@ -77,20 +77,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the trig tangent of a number in radians."
+                    "description": "Returns the trig tangent of a number in radians.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The trig tangent of the given value in radians."
+                    "description": "The trig tangent of the given value in radians.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
                     "version": "1.0.2"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The value in radians",
+                    "tagType": "parameter",
                     "var": "value",
                     "type": "number",
                     "optional": false
@@ -112,20 +112,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the arc sine of a number in radians."
+                    "description": "Returns the arc sine of a number in radians.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The arc sine of the given value in radians, or idk if the argument's absolute value is greater than 1"
+                    "description": "The arc sine of the given value in radians, or idk if the argument's absolute value is greater than 1",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
                     "version": "1.0.2"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The value in radians",
+                    "tagType": "parameter",
                     "var": "value",
                     "type": "number",
                     "optional": false
@@ -147,20 +147,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the arc cosine of a number in radians."
+                    "description": "Returns the arc cosine of a number in radians.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The arc cosine of the given value in radians, or idk if the argument's absolute value is greater than 1"
+                    "description": "The arc cosine of the given value in radians, or idk if the argument's absolute value is greater than 1",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
                     "version": "1.0.2"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The value in radians",
+                    "tagType": "parameter",
                     "var": "value",
                     "type": "number",
                     "optional": false
@@ -182,20 +182,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the arc tangent of a number in radians."
+                    "description": "Returns the arc tangent of a number in radians.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The arc tangent of the given value in radians."
+                    "description": "The arc tangent of the given value in radians.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "from",
                     "version": "1.0.2"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The value in radians",
+                    "tagType": "parameter",
                     "var": "value",
                     "type": "number",
                     "optional": false
@@ -217,12 +217,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Converts degrees to radians."
+                    "description": "Converts degrees to radians.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The value in radians."
+                    "description": "The value in radians.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "example",
@@ -237,8 +237,8 @@
                     "version": "1.0.2"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The value in degrees",
+                    "tagType": "parameter",
                     "var": "degrees",
                     "type": "number",
                     "optional": false
@@ -260,12 +260,12 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Converts radians to degrees."
+                    "description": "Converts radians to degrees.",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The value in degrees."
+                    "description": "The value in degrees.",
+                    "tagType": "returns"
                 },
                 {
                     "tagType": "example",
@@ -280,8 +280,8 @@
                     "version": "1.0.2"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The value in radians",
+                    "tagType": "parameter",
                     "var": "radians",
                     "type": "number",
                     "optional": false
@@ -303,31 +303,31 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the angle in radians between the positive x-axis and the point (x, y)."
+                    "description": "Returns the angle in radians between the positive x-axis and the point (x, y).",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "The angle in radians from the positive x-axis to the point (x, y)."
+                    "description": "The angle in radians from the positive x-axis to the point (x, y).",
+                    "tagType": "returns"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "honestly, if you're using this function you should probably not be using Jaiva to do whatever the hell you're doing..."
+                    "description": "honestly, if you're using this function you should probably not be using Jaiva to do whatever the hell you're doing...",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "from",
                     "version": "6.0.0-alpha.3"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The y-coordinate",
+                    "tagType": "parameter",
                     "var": "y",
                     "type": "number",
                     "optional": false
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The x-coordinate",
+                    "tagType": "parameter",
                     "var": "x",
                     "type": "number",
                     "optional": false

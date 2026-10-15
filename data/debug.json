@@ -1,5 +1,5 @@
 {
-    "version": "6.1.1",
+    "version": "6.1.2",
     "tokens": [
         {
             "type": "TFunction",
@@ -7,24 +7,24 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Throws a DebugException to be caught by a Java test class and emits the given variables"
+                    "description": "Throws a DebugException to be caught by a Java test class and emits the given variables",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "Physically can't return. As it always throws an error"
+                    "description": "Physically can't return. As it always throws an error",
+                    "tagType": "returns"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "If you aren't familiar with Java, the language Jaiva is developed in. This will essentially forcefully stop the execution of the interpreter, with the intent for said error to be caught and dealt with by another Java class. This serves 0 purpose if  you're just running a Jaiva file."
+                    "description": "If you aren't familiar with Java, the language Jaiva is developed in. This will essentially forcefully stop the execution of the interpreter, with the intent for said error to be caught and dealt with by another Java class. This serves 0 purpose if  you're just running a Jaiva file.",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "from",
                     "version": "1.0.2"
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The array of values to pass to the exception",
+                    "tagType": "parameter",
                     "var": "arr",
                     "type": "[]",
                     "optional": true
@@ -46,20 +46,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Returns the current context's vfs."
+                    "description": "Returns the current context's vfs.",
+                    "tagType": "GENERIC"
                 },
                 {
                     "tagType": "from",
                     "version": "4.1.0"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "A 2d array, first array containing the keys, second array the values."
+                    "description": "A 2d array, first array containing the keys, second array the values.",
+                    "tagType": "returns"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "This function does not allow you to edit the current vfs, only to get everything that is currently within the vfs as an array. Everytime this function is called a new array containing all the stuff is made."
+                    "description": "This function does not allow you to edit the current vfs, only to get everything that is currently within the vfs as an array. Everytime this function is called a new array containing all the stuff is made.",
+                    "tagType": "devnote"
                 }
             ],
             "lineNumber": -1,
@@ -74,20 +74,20 @@
             "exportSymbol": false,
             "toolTip": [
                 {
-                    "tagType": "GENERIC",
-                    "description": "Links the MapValue instance of 'a' into 'b' such that they hold the same value and if one is edited the other will also have that edit."
+                    "description": "Links the MapValue instance of 'a' into 'b' such that they hold the same value and if one is edited the other will also have that edit.",
+                    "tagType": "GENERIC"
                 },
                 {
                     "tagType": "from",
                     "version": "5.0.4"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "idk"
+                    "description": "idk",
+                    "tagType": "returns"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "A usual (b <- a) syntax would suffice if you'd like to copy the value of a into b.\nHowever when a is changed, b will stay the value you set earlier. This function fixes that where it will\nlink the exact MapValue from a into b, discarding b's old MapValue. such that editing any one of the symbols\nvia the reassignment syntax will update the linked variable.\n\nIn the case that the \"b\" parameter does not actually exist in the symbol table, d_link will try to make it, itself.\n"
+                    "description": "A usual (b <- a) syntax would suffice if you'd like to copy the value of a into b.\nHowever when a is changed, b will stay the value you set earlier. This function fixes that where it will\nlink the exact MapValue from a into b, discarding b's old MapValue. such that editing any one of the symbols\nvia the reassignment syntax will update the linked variable.\n\nIn the case that the \"b\" parameter does not actually exist in the symbol table, d_link will try to make it, itself.\n",
+                    "tagType": "devnote"
                 },
                 {
                     "tagType": "example",
@@ -109,15 +109,15 @@
                     ]
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The symbol which holds the MapValue to be linked.",
+                    "tagType": "parameter",
                     "var": "a",
                     "type": "idk",
                     "optional": false
                 },
                 {
-                    "tagType": "parameter",
                     "description": "The symbol who's MapValue will either be created or overwritten",
+                    "tagType": "parameter",
                     "var": "b",
                     "type": "idk",
                     "optional": false
@@ -145,16 +145,16 @@
                     "version": "5.0.4"
                 },
                 {
-                    "tagType": "GENERIC",
-                    "description": "gets the scope. wahtd you expect"
+                    "description": "gets the scope. wahtd you expect",
+                    "tagType": "GENERIC"
                 },
                 {
-                    "tagType": "returns",
-                    "description": "the scope string"
+                    "description": "the scope string",
+                    "tagType": "returns"
                 },
                 {
-                    "tagType": "devnote",
-                    "description": "This is the exact same scope string that an error outputs"
+                    "description": "This is the exact same scope string that an error outputs",
+                    "tagType": "devnote"
                 }
             ],
             "lineNumber": -1,
