@@ -106,8 +106,8 @@ export class SharedValues extends Base {
             "math/const",
             "math/trig",
             "file",
-            "file/api",
-            "file/query",
+            "file/text",
+            "file/text/query",
             "arrays",
             "time",
             "time/api",
@@ -116,6 +116,12 @@ export class SharedValues extends Base {
             "file/bytes",
             "file/bytes/const",
             "continuous",
+            "reflect",
+            "net",
+            "net/const",
+            "net/tcp",
+            "net/interf",
+            "net/interf/query",
         ];
 
         globals.forEach((lib) => {
@@ -142,6 +148,7 @@ export class SharedValues extends Base {
         try {
             let any = JSON.parse(str);
             if (Tokens.hasPropertyOf<StreamerOutput>(any, "streamer")) {
+                any.lineNumber = any.lineNumber == -1 ? 1 : any.lineNumber;
                 if (this.getDiagnostics()) {
                     this.getDiagnostics()?.err(doc, any);
                 }

@@ -1,17 +1,17 @@
 {
-    "version": "6.1.2",
+    "version": "7.0.0-beta.2",
     "tokens": [
         {
             "type": "TUnknownScalar",
             "name": "path",
-            "exportSymbol": true,
-            "lineNumber": 17,
+            "exportSymbol": false,
+            "lineNumber": 18,
             "value": {
                 "type": "TVoidValue",
                 "name": "TVoidValue",
                 "exportSymbol": false,
                 "toolTip": "Jaiva Construct",
-                "lineNumber": 17
+                "lineNumber": 18
             },
             "toolTip": [
                 {
@@ -25,13 +25,13 @@
             "type": "TUnknownScalar",
             "name": "description",
             "exportSymbol": false,
-            "lineNumber": 22,
+            "lineNumber": 23,
             "value": {
                 "type": "TVoidValue",
                 "name": "TVoidValue",
                 "exportSymbol": false,
                 "toolTip": "Jaiva Construct",
-                "lineNumber": 22
+                "lineNumber": 23
             },
             "toolTip": [
                 {
@@ -45,7 +45,7 @@
             "type": "TFunction",
             "name": "F~a_remove",
             "exportSymbol": true,
-            "lineNumber": 35,
+            "lineNumber": 36,
             "args": [
                 "arr",
                 "n"
@@ -102,7 +102,7 @@
             "type": "TFunction",
             "name": "F~a_pop",
             "exportSymbol": true,
-            "lineNumber": 58,
+            "lineNumber": 56,
             "args": [
                 "array"
             ],
@@ -154,7 +154,7 @@
             "type": "TFunction",
             "name": "F~a_push",
             "exportSymbol": true,
-            "lineNumber": 74,
+            "lineNumber": 71,
             "args": [
                 "arr",
                 "element"
@@ -213,7 +213,7 @@
             "type": "TFunction",
             "name": "F~a_pushAll",
             "exportSymbol": true,
-            "lineNumber": 89,
+            "lineNumber": 86,
             "args": [
                 "params"
             ],
@@ -263,7 +263,7 @@
             "type": "TFunction",
             "name": "F~a_unshift",
             "exportSymbol": true,
-            "lineNumber": 109,
+            "lineNumber": 106,
             "args": [
                 "arr",
                 "element"
@@ -322,7 +322,7 @@
             "type": "TFunction",
             "name": "F~a_shift",
             "exportSymbol": true,
-            "lineNumber": 127,
+            "lineNumber": 124,
             "args": [
                 "arr",
                 "n"
@@ -379,7 +379,7 @@
             "type": "TFunction",
             "name": "F~a_filter",
             "exportSymbol": true,
-            "lineNumber": 152,
+            "lineNumber": 149,
             "args": [
                 "arr",
                 "F~predicate"
@@ -403,7 +403,7 @@
                     "optional": false
                 },
                 {
-                    "description": "A function that takes an element and returns true",
+                    "description": "A function that takes an element and additional parameters and returns a boolean.",
                     "tagType": "parameter",
                     "var": "predicate",
                     "type": "F~any",
@@ -414,7 +414,7 @@
                     "tagType": "returns"
                 },
                 {
-                    "description": "The predicate function must take in 1 parameter, the element and return a boolean. Throws if the first argument is not an array or if the second argument is not a function.",
+                    "description": "The predicate function must take in at least 1 parameter, which is the input element. The function can then further take in an index as parameter 2, and the original array at parameter 3 and should return a boolean. Throws if the first argument is not an array or if the second argument is not a function.",
                     "tagType": "devnote"
                 },
                 {
@@ -426,7 +426,9 @@
                     "codeblock": [
                         "maak arr <-| 1, 2, 3, 4, 5, 6!",
                         "maak isEven <- f~(num) : num % 2 = 0! @ A lambda function to check if a number is even",
-                        "khuluma(a_filter(arr, isEven))! @ Returns [2, 4, 6]"
+                        "khuluma(a_filter(arr, isEven))! @ Returns [2, 4, 6]",
+                        "@ Filter for elements who's index is even.",
+                        "khuluma(a_filter(arr, f~(num, index) : index % 2 = 0)!"
                     ]
                 }
             ]
@@ -435,7 +437,7 @@
             "type": "TFunction",
             "name": "F~a_replace",
             "exportSymbol": true,
-            "lineNumber": 174,
+            "lineNumber": 169,
             "args": [
                 "arr",
                 "i",
@@ -444,7 +446,7 @@
             "isArgOptional": [
                 false,
                 false,
-                false
+                true
             ],
             "varArgs": false,
             "body": null,
@@ -468,11 +470,11 @@
                     "optional": false
                 },
                 {
-                    "description": "The new element to insert",
+                    "description": "The new element to insert (Can be idk)",
                     "tagType": "parameter",
                     "var": "el",
                     "type": "any",
-                    "optional": false
+                    "optional": true
                 },
                 {
                     "description": "A new array with the element at index i replaced with el",
@@ -499,7 +501,7 @@
             "type": "TFunction",
             "name": "F~a_delete",
             "exportSymbol": true,
-            "lineNumber": 202,
+            "lineNumber": 196,
             "args": [
                 "arr",
                 "i"
@@ -554,14 +556,14 @@
             "type": "TFunction",
             "name": "F~a_indexOf",
             "exportSymbol": true,
-            "lineNumber": 231,
+            "lineNumber": 224,
             "args": [
                 "arr",
                 "el"
             ],
             "isArgOptional": [
                 false,
-                false
+                true
             ],
             "varArgs": false,
             "body": null,
@@ -582,7 +584,7 @@
                     "tagType": "parameter",
                     "var": "el",
                     "type": "any",
-                    "optional": false
+                    "optional": true
                 },
                 {
                     "description": "The index of the first occurrence of el in arr, or idk if not found",
@@ -611,7 +613,7 @@
             "type": "TFunction",
             "name": "F~a_reverse",
             "exportSymbol": true,
-            "lineNumber": 248,
+            "lineNumber": 241,
             "args": [
                 "arr"
             ],
@@ -657,7 +659,7 @@
             "type": "TFunction",
             "name": "F~a_reduce",
             "exportSymbol": true,
-            "lineNumber": 274,
+            "lineNumber": 267,
             "args": [
                 "arr",
                 "F~reducer",
@@ -724,7 +726,7 @@
             "type": "TFunction",
             "name": "F~a_map",
             "exportSymbol": true,
-            "lineNumber": 302,
+            "lineNumber": 295,
             "args": [
                 "arr",
                 "F~mapperFunction"
@@ -748,7 +750,7 @@
                     "optional": false
                 },
                 {
-                    "description": "A function that takes one element and returns its transformed value.",
+                    "description": "A function that takes the element and additional parameters  returns its transformed value.",
                     "tagType": "parameter",
                     "var": "mapperFunction",
                     "type": "F~any",
@@ -763,7 +765,7 @@
                     "version": "4.1.1"
                 },
                 {
-                    "description": "The mapperFunction must take in 1 parameter (the element). Throws if the first argument is not an array or if the second argument is not a function.",
+                    "description": "The mapper function must take in at least 1 parameter, which is the input element. The function can then further take in an index as parameter 2, and the original array at parameter 3 and should return a new transformed version. Throws if the first argument is not an array or if the second argument is not a function.",
                     "tagType": "devnote"
                 },
                 {
@@ -780,7 +782,7 @@
             "type": "TFunction",
             "name": "F~a_from",
             "exportSymbol": true,
-            "lineNumber": 325,
+            "lineNumber": 316,
             "args": [
                 "input",
                 "split"
@@ -836,7 +838,7 @@
             "type": "TFunction",
             "name": "F~a_forEach",
             "exportSymbol": true,
-            "lineNumber": 375,
+            "lineNumber": 364,
             "args": [
                 "arr",
                 "F~function"
@@ -860,7 +862,7 @@
                     "optional": false
                 },
                 {
-                    "description": "A function that takes one element and shouldn't return really.",
+                    "description": "A function that takes one element and extra parameters and shouldn't return really.",
                     "tagType": "parameter",
                     "var": "function",
                     "type": "F~any",
@@ -875,7 +877,7 @@
                     "version": "5.1.0"
                 },
                 {
-                    "description": "The function must take in 1 parameter (the element). Throws if the first argument is not an array or if the second argument is not a function.",
+                    "description": "The function must take in at least 1 parameter (the element). and can optionally take in at the 2nd parameter an index, and at the third the original array. Throws if the first argument is not an array or if the second argument is not a function.",
                     "tagType": "devnote"
                 },
                 {
@@ -892,7 +894,7 @@
             "type": "TFunction",
             "name": "F~a_apply",
             "exportSymbol": true,
-            "lineNumber": 412,
+            "lineNumber": 399,
             "args": [
                 "params"
             ],
@@ -945,6 +947,57 @@
                     "tagType": "devnote"
                 }
             ]
+        },
+        {
+            "type": "TFunction",
+            "name": "F~a_findFirst",
+            "exportSymbol": true,
+            "toolTip": "Jaiva Construct",
+            "lineNumber": 429,
+            "args": [
+                "arr",
+                "F~predicate"
+            ],
+            "isArgOptional": [
+                false,
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~a_findLast",
+            "exportSymbol": true,
+            "toolTip": "Jaiva Construct",
+            "lineNumber": 453,
+            "args": [
+                "arr",
+                "F~predicate"
+            ],
+            "isArgOptional": [
+                false,
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~a_find",
+            "exportSymbol": true,
+            "toolTip": "Jaiva Construct",
+            "lineNumber": 478,
+            "args": [
+                "arr",
+                "F~predicate"
+            ],
+            "isArgOptional": [
+                false,
+                false
+            ],
+            "varArgs": false,
+            "body": null
         }
     ]
 }

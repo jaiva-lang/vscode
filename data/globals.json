@@ -1,5 +1,5 @@
 {
-    "version": "6.1.2",
+    "version": "7.0.0-beta.2",
     "tokens": [
         {
             "type": "TFunction",
@@ -110,7 +110,7 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "6.1.2"
+            "value": "7.0.0-beta.2"
         },
         {
             "type": "TFunction",
@@ -614,6 +614,149 @@
             ],
             "lineNumber": -1,
             "value": []
+        },
+        {
+            "type": "TFunction",
+            "name": "F~linker",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "description": "Links the MapValue instance of 'a' into 'b' such that they hold the same value and if one is edited the other will also have that edit.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "from",
+                    "version": "5.0.4"
+                },
+                {
+                    "description": "idk",
+                    "tagType": "returns"
+                },
+                {
+                    "description": "A usual (b <- a) syntax would suffice if you'd like to copy the value of a into b.\nHowever when a is changed, b will stay the value you set earlier. This function fixes that where it will\nlink the exact MapValue from a into b, discarding b's old MapValue. such that editing any one of the symbols\nvia the reassignment syntax will update the linked variable. In the case that the \"b\" parameter does not actually exist in the symbol table, d_link will try to make it, itself.\n",
+                    "tagType": "devnote"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "maak a <- f~() : 10! @ Lambda that returns 10",
+                        "maak b <- true! @ boolean value true",
+                        "",
+                        "@ With normal reassignment syntax, setting b to a then changing b does not update a",
+                        "b <- a!",
+                        "b <- 10!",
+                        "khuluma(a)! @ prints the lambda signature and not 10.",
+                        "",
+                        "@ With d_link, the exact MapValue held by that alias is copied.",
+                        "d_link(a, b)!",
+                        "b <- 10!",
+                        "khuluma(a)! @ prints 10",
+                        "a <- 100!",
+                        "khuluma(b)! @ prints 100"
+                    ]
+                },
+                {
+                    "description": "The symbol which holds the MapValue to be linked.",
+                    "tagType": "parameter",
+                    "var": "a",
+                    "type": "idk",
+                    "optional": false
+                },
+                {
+                    "description": "The symbol who's MapValue will either be created or overwritten",
+                    "tagType": "parameter",
+                    "var": "b",
+                    "type": "idk",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "a",
+                "b"
+            ],
+            "isArgOptional": [
+                false,
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~tseaf",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "description": "Imports and immediately returns the imported symbol from the given file or library",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "The value, if the requested symbol is of a variable, the function if the requested symbol is a function, but otherwise idk if the library/file doesnt expose such a symbol.",
+                    "tagType": "returns"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "@ Normally, you have to go via import syntax just to import a single variable",
+                        "tsea \"jaiva/somewhere\" <- func!",
+                        "func()!",
+                        "",
+                        "@ Using tseaf you can do the following",
+                        "tseaf(\"jaiva/somewhere\", \"func\")()!",
+                        "",
+                        "@ Or otherwise alias it yourself",
+                        "maak func_1 <- tseaf(\"jaiva/somewhere\", \"func\")!",
+                        "func_1()!",
+                        "",
+                        "@ Works for files that expose symbols too",
+                        "maak arr <- tseaf(\"../path\", \"array\")!",
+                        "khuluma(arr~)! @ Prints array length",
+                        "",
+                        "@ And for the symbol name, it's not required to pass a string.",
+                        "@ Provided the reference does not exist in the scope, then it will",
+                        "@ use that non-existing reference's name. Otherwise if it exists it",
+                        "@ will use that reference's value like normal.",
+                        "",
+                        "maak funcp <- 10!",
+                        "tseaf(\"jaiva/somewhere\", funca)! @ Will retrieve funca from the list",
+                        "tseaf(\"jaiva/somewhere\", funcp)! @ Will fail, since funcp will pass the number 10 as the argument."
+                    ]
+                },
+                {
+                    "description": "This isn't special, the \"jaiva/\" prefix for libraries like normal tsea syntax is still requried to differentiate a file from a library import.",
+                    "tagType": "devnote"
+                },
+                {
+                    "description": "The path to import from.",
+                    "tagType": "parameter",
+                    "var": "path",
+                    "type": "string",
+                    "optional": false
+                },
+                {
+                    "description": "The symbol to import from. This can either be a string, or a non-existing variable reference.",
+                    "tagType": "parameter",
+                    "var": "symbol",
+                    "type": "string",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "path",
+                "symbol"
+            ],
+            "isArgOptional": [
+                false,
+                false
+            ],
+            "varArgs": false,
+            "body": null
         }
     ]
 }

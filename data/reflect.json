@@ -1,0 +1,92 @@
+{
+    "version": "7.0.0-beta.2",
+    "tokens": [
+        {
+            "type": "TFunction",
+            "name": "F~r_fEvalParamsLater",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "description": "The function reference.",
+                    "tagType": "parameter",
+                    "var": "funcRef",
+                    "type": "idk",
+                    "optional": false
+                },
+                {
+                    "description": "Whether the function should evaluate parameters later or not.",
+                    "tagType": "parameter",
+                    "var": "newValue",
+                    "type": "boolean",
+                    "optional": true
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "funcRef",
+                "newValue"
+            ],
+            "isArgOptional": [
+                false,
+                true
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~r_vPreferArr",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "description": "The variable reference.",
+                    "tagType": "parameter",
+                    "var": "varRef",
+                    "type": "idk",
+                    "optional": false
+                },
+                {
+                    "description": "Whether the variable should prefer arrays or not",
+                    "tagType": "parameter",
+                    "var": "newValue",
+                    "type": "boolean",
+                    "optional": true
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "varRef",
+                "newValue"
+            ],
+            "isArgOptional": [
+                false,
+                true
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~r_fUnfreeze",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "description": "The function reference.",
+                    "tagType": "parameter",
+                    "var": "funcRef",
+                    "type": "idk",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "funcRef"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        }
+    ]
+}

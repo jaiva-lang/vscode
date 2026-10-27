@@ -1,5 +1,5 @@
 {
-    "version": "6.1.2",
+    "version": "7.0.0-beta.2",
     "tokens": [
         {
             "type": "TFunction",
@@ -229,6 +229,41 @@
                 true
             ],
             "varArgs": true,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~t_strToByteArr",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "description": "Converts the given string into UTF-8 byte values (0�255)",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "The UTF-8 bytes as integer values",
+                    "tagType": "returns"
+                },
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "The string to convert into UTF-8 bytes",
+                    "tagType": "parameter",
+                    "var": "string",
+                    "type": "string",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "string"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
             "body": null
         }
     ]

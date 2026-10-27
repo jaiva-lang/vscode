@@ -1,0 +1,1359 @@
+{
+    "version": "7.0.0-beta.2",
+    "tokens": [
+        {
+            "type": "TStringVar",
+            "name": "NET_R_INTEGER",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_integer"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_INT",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_integer"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_INTEGER",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_integer"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_INT",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_integer"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_JAVA_UTF8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_java_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_MOD_UTF8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_java_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_JAVA_UTF8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_java_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_MOD_UTF8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_java_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_UTF8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. This has no read variant due to the nature of not knowing how many bytes the entire UTF8 chunk could be. Your problem.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_STRING",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. This has no read variant due to the nature of not knowing how many bytes the entire UTF8 chunk could be. Your problem.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_UTF_8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. This has no read variant due to the nature of not knowing how many bytes the entire UTF8 chunk could be. Your problem.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_DOUBLE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_double"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_DOUBLE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_double"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_LONG",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_long"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_LONG",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_long"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_BOOLEAN",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_boolean"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_BOOL",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_boolean"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_BOOLEAN",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_boolean"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_BOOL",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_boolean"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_BYTE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Jaiva doesn't actually have a byte type, it's converted to an integer of range 0 to 255, so keep that in mind.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_byte"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_BYTE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Jaiva doesn't actually have a byte type, it's converted to an integer of range 0 to 255, so keep that in mind.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_byte"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_BYTES",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Attempts to read at most the amount of bytes currently available and returns that. this is tcp bro rather use TCP_RU_BYTES",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_BYTEARR",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Attempts to read at most the amount of bytes currently available and returns that. this is tcp bro rather use TCP_RU_BYTES",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_BYTEBUFF",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Attempts to read at most the amount of bytes currently available and returns that. this is tcp bro rather use TCP_RU_BYTES",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_BYTES",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Attempts to read at most the amount of bytes currently available and returns that. this is tcp bro rather use TCP_RU_BYTES",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_BYTEARR",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Attempts to read at most the amount of bytes currently available and returns that. this is tcp bro rather use TCP_RU_BYTES",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_BYTEBUFF",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Attempts to read at most the amount of bytes currently available and returns that. this is tcp bro rather use TCP_RU_BYTES",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_RU_BYTES",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. This one's special since it'll wait and keep collecting bytes until the buffer has reached N bytes.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_ru_u_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_RU_BYTEARR",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. This one's special since it'll wait and keep collecting bytes until the buffer has reached N bytes.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_ru_u_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_RU_BYTEBUFF",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. This one's special since it'll wait and keep collecting bytes until the buffer has reached N bytes.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_ru_u_bytes"
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_interfs",
+            "exportSymbol": false,
+            "toolTip": [],
+            "lineNumber": -1,
+            "args": [],
+            "isArgOptional": [],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_localIpv4",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "description": "Returns your local IPv4 address",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Your local IP Address formatted as a string.",
+                    "tagType": "returns"
+                }
+            ],
+            "lineNumber": -1,
+            "args": [],
+            "isArgOptional": [],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_localIpv6",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "description": "Returns your local IPv6 address",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Your local IP Address formatted as a string.",
+                    "tagType": "returns"
+                }
+            ],
+            "lineNumber": -1,
+            "args": [],
+            "isArgOptional": [],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_iName",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Gets the name of the network interface",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iName(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_iDisplayName",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Get the display name of this network interface. usually a human readable string",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iDisplayName(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_iAddrIpv4List",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Gets the list of Ipv4 IPs as byte arrays (or strings) associated with the interface",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iAddrIpv4List(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                },
+                {
+                    "description": "Whether to format each byte array into the human readable IPv4 format",
+                    "tagType": "parameter",
+                    "var": "format",
+                    "type": "boolean",
+                    "optional": true
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array",
+                "format"
+            ],
+            "isArgOptional": [
+                false,
+                true
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_iAddrIpv6List",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Gets the list of Ipv6 IPs as byte arrays associated with the interface",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iAddrIpv6List(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                },
+                {
+                    "description": "Whether to format each byte array into the human readable IPv6 format",
+                    "tagType": "parameter",
+                    "var": "format",
+                    "type": "boolean",
+                    "optional": true
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array",
+                "format"
+            ],
+            "isArgOptional": [
+                false,
+                true
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_iActive",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Gets the boolean indicating whether the interface is up and running",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iActive(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_iLoopback",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Gets the boolean indicating whether the interface is a loopback one.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iLoopback(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_iVirtual",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Gets the boolean indicating whether the interface is a virtual one. (or subinterface)",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iVirtual(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_iAddrMac",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "gets the hardware address of this interface (The MAC Address) If there isn't one this returns idk",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iAddrMac(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~tcp_serve",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "tsea \"jaiva/net\"!",
+                        "tsea \"jaiva/threads\"!",
+                        "tsea \"jaiva/types/numbers\"!",
+                        "",
+                        "@* Send a packet through.",
+                        "@* p        $> con <- F~any The connection function",
+                        "@* p        $> msg <- string The message to send",
+                        "kwenza sendPacket(con, msg) ->",
+                        "\tmaak bArr <- t_strToByteArr(msg)!",
+                        "\tcon(C_WRITE)(NET_W_INT, bArr~)!",
+                        "\tcon(C_WRITE)(NET_W_BYTEBUFF, bArr)!",
+                        "\tcon(C_FLUSH)()!",
+                        "<~",
+                        "",
+                        "@* Reads an input tcp packet",
+                        "@* p        $> con <- F~any The connection function",
+                        "@* rets     $> A String.",
+                        "@* devn     $> This function essentially reads first an integer, then reads the next bytes of that",
+                        "@*          $> integer length expecting it as a UTF-8 String.",
+                        "kwenza readPacket(con) ->",
+                        "\tmaak msgLen <- con(C_READ)(NET_R_INT)!",
+                        "\tmaak pl <- con(C_READ)(NET_RU_BYTEBUFF, msgLen)!",
+                        "\t@ Using NET_R_BYTEBUFF will only read whats available!",
+                        "\tkhutla t_strFromByteArr(pl:::)!",
+                        "<~",
+                        "",
+                        "@* Client function but server side.",
+                        "@* p        $> con <- F~any The connection function",
+                        "@* p        $> conAddress <- string The connection address",
+                        "@* p        $> conPort <- string The connection port",
+                        "@* p        $> close <- F~any close function which closes",
+                        "@*          $> this side of the socket when called.",
+                        "kwenza connectionHandler(F~con, conAddress, conPort, F~close) ->",
+                        "    maak conn_eof <- con(C_EOF)! @ EOF function to set calback and check",
+                        "    maak conn_closed <- con(C_CLOSED)! @ Same thing as EOF",
+                        "",
+                        "    @* p    $> type <- string The type of the close call.",
+                        "    @*      $> \"SELF\" indicates this own handler closed, \"CONNECTION\" is when the connection",
+                        "    @*      $> closes gracefully. \"INPUT\"/\"OUTPUT\" means either of those from the client closed. \"ERR\" is what u expect",
+                        "    kwenza closedHandler(_, _2, type) ->",
+                        "        khuluma(\"Socket was closed!\")!",
+                        "        @ we have conPort and conAddress already.",
+                        "        maak identifier <- \"$t|> \" + conPort + \" on \" +  conAddress!",
+                        "",
+                        "        @ If its SELF, then this side was the one that close via invoking the close() function",
+                        "        if (type != \"SELF\") ->",
+                        "            @ if i ever introduce a switch, itd naturally replace this.",
+                        "            sif (type = \"CONNECTION\") ?> khuluma(identifier + \" closed gracefully.\")!",
+                        "            sif (type = \"ERR\") ?> khuluma(identifier + \" crashed suddenly!\")!",
+                        "            sif (type = \"INPUT\") ?> khuluma(identifier + \" closed it's input stream!\")!",
+                        "            sif (type = \"OUTPUT\") ?> khuluma(identifier + \" closed it's output stream!\")!",
+                        "        <~",
+                        "\t    close()!",
+                        "    <~",
+                        "",
+                        "    @ Set the close callback",
+                        "\tconn_closed(closedHandler)!",
+                        "",
+                        "    @ Set the EOF callback",
+                        "\tconn_eof()!",
+                        "\t\t|> f~(_, _2) : khuluma(conAddress + \" encountered EOF wile reading!\")!",
+                        "",
+                        "\tzama zama ->",
+                        "\t    @ Send first packet to da client",
+                        "\t\tsendPacket(con, \"What's up bro\")!",
+                        "        @ wait for any others.",
+                        "\t\tnikhil ((conn_eof()') && (conn_closed()')) ->",
+                        "\t\t    khuluma(\"Waiting for \" + conAddress + \" to send us a packet....\")!",
+                        "\t\t\tkhuluma(\" [RECEIVED FROM \"+conAddress+\":] \" + readPacket(con))!",
+                        "\t\t<~",
+                        "\t<~ chaai ->",
+                        "        @ if the connection closed, then this is a false alarm.",
+                        "        if (conn_closed() || conn_eof()) ->",
+                        "            khutla idk!",
+                        "        <~ mara ->",
+                        "            @ client exited due to err",
+                        "            khuluma(conAddress + \" \"+ conPort + \" disconnected weirdly..... \" + error)!",
+                        "\t\t<~",
+                        "\t<~",
+                        "",
+                        "\tkhuluma(\"Closing communication with \" + conAddress)!",
+                        "",
+                        "\tclose()!",
+                        "<~",
+                        "",
+                        "@* The server function",
+                        "@* p        $> acceptConn <- F~any The function which accepts connections.",
+                        "@*          $> This function will halt the thread (block) until a connection is made.",
+                        "@*          $> Once a connection is made, it returns a 4 element array. In particular",
+                        "@*          $> [F~connection, connectionAddress, connectionPort, F~closeFunction]",
+                        "@* devn     $> This function calls it's connectionHandler in a new thread since reading and writing",
+                        "@*          $> over the network in tcp is blocking on both ends. You cna handle this however but here it's",
+                        "@*          $> handled via threading each connection to its own thread.",
+                        "kwenza server(F~acceptConn, F~close) ->",
+                        "    khuluma(\"Started server\")!",
+                        "    zama zama ->",
+                        "        khuluma(\"Waiting for connections...\")!",
+                        "        nikhil (true;) ->",
+                        "            maak c <- acceptConn()! @ [F~connection, connectionAddress, connectionPort, F~closeFunction]",
+                        "            khuluma(\"Established connection from \" + c[1])!",
+                        "            thread()!",
+                        "                |> f~() : connectionHandler(c:::)!",
+                        "                |> f~(status, msg) : khuluma(\"Client thread ended. \" + status)!",
+                        "        <~",
+                        "\t<~ chaai ->",
+                        "\t    khuluma(\"Server experienced an error\")!",
+                        "\t    khuluma(error)!",
+                        "\t    close()! @ close for good measure",
+                        "\t<~",
+                        "<~",
+                        "",
+                        "tcp_serve(5050, server)!"
+                    ]
+                },
+                {
+                    "description": "Creates a new server socket at the specific port.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "The input function is expected to take in 2 arguments, the first argument being another function for accepting new connections and the second to close the server itself.",
+                    "tagType": "devnote"
+                },
+                {
+                    "description": "The port",
+                    "tagType": "parameter",
+                    "var": "port",
+                    "type": "number",
+                    "optional": false
+                },
+                {
+                    "description": "The function to take in, which should take a minimum of 2 arguments.",
+                    "tagType": "parameter",
+                    "var": "func",
+                    "type": "F~any",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "port",
+                "func"
+            ],
+            "isArgOptional": [
+                false,
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~tcp_handshake",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "tsea \"jaiva/net\"!",
+                        "tsea \"jaiva/threads\"!",
+                        "tsea \"jaiva/types/numbers\"!",
+                        "",
+                        "@* Send a packet through.",
+                        "@* p        $> con <- F~any The connection function",
+                        "@* p        $> msg <- string The message to send",
+                        "kwenza sendPacket(con, msg) ->",
+                        "\tmaak bArr <- t_strToByteArr(msg)!",
+                        "\tcon(C_WRITE)(NET_W_INT, bArr~)!",
+                        "\tcon(C_WRITE)(NET_W_BYTEBUFF, bArr)!",
+                        "\tcon(C_FLUSH)()!",
+                        "<~",
+                        "",
+                        "@* Reads an input tcp packet",
+                        "@* p        $> con <- F~any The connection function",
+                        "@* rets     $> A String.",
+                        "@* devn     $> This function essentially reads first an integer, then reads the next bytes of that",
+                        "@*          $> integer length expecting it as a UTF-8 String.",
+                        "kwenza readPacket(con) ->",
+                        "\tmaak msgLen <- con(C_READ)(NET_R_INT)!",
+                        "\tmaak pl <- con(C_READ)(NET_RU_BYTEBUFF, msgLen)!",
+                        "\t@ Using NET_R_BYTEBUFF will only read whats available!",
+                        "\tkhutla t_strFromByteArr(pl:::)!",
+                        "<~",
+                        "",
+                        "",
+                        "@* Client function. Its the client itself.",
+                        "@* p        $> con <- F~any The connection function",
+                        "@* p        $> conAddress <- string The connection address",
+                        "@* p        $> conPort <- string The connection port",
+                        "@* p        $> close <- F~any close function which closes",
+                        "@*          $> this side of the socket when called.",
+                        "kwenza client(F~con, conAddress, conPort, F~close) ->",
+                        "",
+                        "    maak conn_eof <- con(C_EOF)! @ EOF function to set calback and check",
+                        "    maak conn_closed <- con(C_CLOSED)! @ Same thing as EOF",
+                        "",
+                        "    @ Handle errs",
+                        "    kwenza erHandler(_, _2, type) ->",
+                        "        @ we have conId and conAddress already.",
+                        "        maak identifier <- \"Server on \" + conAddress!",
+                        "",
+                        "        @ If its SELF, then this side was the one that closed via invoking the close() function",
+                        "        if (type != \"SELF\") ->",
+                        "            @ if i ever introduce a switch, itd naturally replace this.",
+                        "            sif (type = \"CONNECTION\") ?> khuluma(identifier + \" was closed.\")!",
+                        "            sif (type = \"ERR\") ?> khuluma(identifier + \" crashe d suddenly!\")!",
+                        "            sif (type = \"INPUT\") ?> khuluma(identifier + \" closed it's input stream!\")!",
+                        "            sif (type = \"OUTPUT\") ?> khuluma(identifier + \" closed it's output stream!\")!",
+                        "        <~",
+                        "",
+                        "\t    close()! @ might as well close if this was invoked.",
+                        "    <~",
+                        "",
+                        "    conn_closed(erHandler)!",
+                        "    conn_eof()! @ Rather use argument extensions here since its a long lambda.",
+                        "        |> f~(_, _2) : khuluma(\"EOF was reached while reading.... oh no.\")!",
+                        "",
+                        "    zama zama ->",
+                        "        @ read first packet",
+                        "        maak greet <- readPacket(con)!",
+                        "",
+                        "        khuluma(\"Received from server \" + greet)!",
+                        "        khuluma()!",
+                        "",
+                        "        @ send to server",
+                        "        nikhil ((con(C_EOF)()') && (con(C_CLOSED)()')) ->",
+                        "            khuluma(\"Send to server: \", true)!",
+                        "            maak out <- mamela()! @ listen to da input blocking.",
+                        "",
+                        "            sif (out = \"exit\" || out~ = 0) ?> voetsek!",
+                        "",
+                        "            sendPacket(con, out)!",
+                        "",
+                        "            khuluma()!",
+                        "        <~",
+                        "\t<~ chaai ->",
+                        "        @ if the connection closed, then this is a false alarm.",
+                        "        @ EOF is supposed to",
+                        "        sif (conn_closed() || conn_eof()) ?> khutla idk!",
+                        "\t    khuluma(\"Connection to \" + conAddress + \" fucking died...: \" + error)!",
+                        "\t<~",
+                        "",
+                        "\tkhuluma(\"Closing communication with \" + conAddress)!",
+                        "",
+                        "\t@ tcp_handshake provides a convenience for this",
+                        "    @ con(C_CLOSE)()!",
+                        "\t@ with the close parameter.",
+                        "\tclose()!",
+                        "<~",
+                        "",
+                        "zama zama ->",
+                        "    @ could use \"localhost\" but im testing whether this does return 10.0.0.17",
+                        "\ttcp_handshake(net_localIpv4(), 5050, client)!",
+                        "<~ chaai ->",
+                        "\tkhuluma(\"Couldn't connect to server or some other error. \" + error)!",
+                        "<~"
+                    ]
+                },
+                {
+                    "description": "Creates a new socket and attempts to connect to the supplied host and port.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "The input function is expected to take in 4 arguments, the first argument being the connection function itself, the 2dn adn 3rd being the address and port, and the last being the close function to close the socket.",
+                    "tagType": "devnote"
+                },
+                {
+                    "description": "The host address. .e.g \"localhost\"",
+                    "tagType": "parameter",
+                    "var": "host",
+                    "type": "string",
+                    "optional": false
+                },
+                {
+                    "description": "The port the server is on",
+                    "tagType": "parameter",
+                    "var": "port",
+                    "type": "number",
+                    "optional": false
+                },
+                {
+                    "description": "The server function to execute to start the server",
+                    "tagType": "parameter",
+                    "var": "func",
+                    "type": "F~any",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "host",
+                "port",
+                "func"
+            ],
+            "isArgOptional": [
+                false,
+                false,
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        }
+    ]
+}

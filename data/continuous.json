@@ -1,5 +1,5 @@
 {
-    "version": "6.1.2",
+    "version": "7.0.0-beta.2",
     "tokens": [
         {
             "type": "TStringVar",
@@ -320,6 +320,134 @@
             ],
             "lineNumber": -1,
             "value": "close"
+        },
+        {
+            "type": "TStringVar",
+            "name": "C_DONE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Key of the function which sets a specific operation to happen for when a given \"something\" is closed.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "[Continuous Function](../Continuous-Functions.md)",
+                    "tagType": "devnote"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "",
+                        "@ Provided \"func\" returns a continuous function.",
+                        "",
+                        "maak cont <- func()!",
+                        "cont(C_DONE)()! @ Calls the returned function."
+                    ]
+                }
+            ],
+            "lineNumber": -1,
+            "value": "done"
+        },
+        {
+            "type": "TStringVar",
+            "name": "C_ENDED",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Key of the function which sets a specific operation to happen for when a given \"something\" is closed.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "[Continuous Function](../Continuous-Functions.md)",
+                    "tagType": "devnote"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "",
+                        "@ Provided \"func\" returns a continuous function.",
+                        "",
+                        "maak cont <- func()!",
+                        "cont(C_DONE)()! @ Calls the returned function."
+                    ]
+                }
+            ],
+            "lineNumber": -1,
+            "value": "done"
+        },
+        {
+            "type": "TStringVar",
+            "name": "C_FINISHED",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Key of the function which sets a specific operation to happen for when a given \"something\" is closed.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "[Continuous Function](../Continuous-Functions.md)",
+                    "tagType": "devnote"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "",
+                        "@ Provided \"func\" returns a continuous function.",
+                        "",
+                        "maak cont <- func()!",
+                        "cont(C_DONE)()! @ Calls the returned function."
+                    ]
+                }
+            ],
+            "lineNumber": -1,
+            "value": "done"
+        },
+        {
+            "type": "TStringVar",
+            "name": "C_CLOSED",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Key of the function which sets a specific operation to happen for when a given \"something\" is closed.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "[Continuous Function](../Continuous-Functions.md)",
+                    "tagType": "devnote"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/continuous\"!",
+                        "",
+                        "@ Provided \"func\" returns a continuous function.",
+                        "",
+                        "maak cont <- func()!",
+                        "cont(C_DONE)()! @ Calls the returned function."
+                    ]
+                }
+            ],
+            "lineNumber": -1,
+            "value": "done"
         }
     ]
 }

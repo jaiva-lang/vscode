@@ -1,5 +1,5 @@
 {
-    "version": "6.1.2",
+    "version": "7.0.0-beta.2",
     "tokens": [
         {
             "type": "TStringVar",
@@ -55,7 +55,7 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "C:\\Users\\ACER\\Documents\\code\\jaiva-vscode\\jaiva\\file"
+            "value": "C:\\Users\\ACER\\Documents\\code\\jaiva\\vscode\\data\\jaiva\\file"
         },
         {
             "type": "TArrayVar",
@@ -215,6 +215,180 @@
                 true,
                 true,
                 true
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~f_nameOf",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "description": "Gets the name of the file from a file.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "The name of the file as a string.",
+                    "tagType": "returns"
+                },
+                {
+                    "tagType": "from",
+                    "version": "5.0.0"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "khuluma(f_nameOf(f_this))! @ Prints the name of the current file."
+                    ]
+                },
+                {
+                    "description": "The file array to get the name from.",
+                    "tagType": "parameter",
+                    "var": "file",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "file"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~f_dirOf",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "description": "Gets the directory path of the file from a file.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "The directory path of the file as a string.",
+                    "tagType": "returns"
+                },
+                {
+                    "tagType": "from",
+                    "version": "5.0.0"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "khuluma(f_dirOf(f_this))! @ Prints the directory path of the current file."
+                    ]
+                },
+                {
+                    "description": "The file array to get the directory path from.",
+                    "tagType": "parameter",
+                    "var": "file",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "file"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~f_contentOf",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "description": "Gets the content of the file from a file.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "The content of the file as an array of strings.",
+                    "tagType": "returns"
+                },
+                {
+                    "tagType": "from",
+                    "version": "5.0.0"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "khuluma(f_contentOf(f_this))! @ Prints the content of the current file."
+                    ]
+                },
+                {
+                    "description": "The file array to get the content from.",
+                    "tagType": "parameter",
+                    "var": "file",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "file"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~f_permsOf",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "description": "Gets the permissions of the file from a file.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "A closure over the permissions array allowing multiple ways to access the permissions without directly indexing into the array.",
+                    "tagType": "returns"
+                },
+                {
+                    "description": "Unlike other functions, this one may require a bit of functional thinking. It returns a function that you can call to get specific permissions or all permissions at once. The function can take, a full string such as \"read\" or \"r\" and return whether that permission exists, An integer position [read, write, execute], or a Unix-like, 3 length permission string to return a boolean indicating that, that permission stirng matches the permission \"rwx\" or \"r-x\"",
+                    "tagType": "devnote"
+                },
+                {
+                    "tagType": "from",
+                    "version": "5.0.0"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "maak permissions <- f_permsOf(f_this)!",
+                        "khuluma(permissions())! @ Prints all permissions as an array [canRead, canWrite, canExecute]",
+                        "khuluma(permissions(\"read\"))! @ Prints whether the file can be read (true/false)",
+                        "khuluma(permissions(\"r\"))! @ Prints whether the file can be read (true/false)",
+                        "khuluma(permissions(0))! @ Prints whether the file can be read (true/false)",
+                        "@ Similarly for \"write\"/\"w\"/1 and \"execute\"/\"x\"/2",
+                        "khuluma(permissions(\"r-x\"))! @ Prints whether the file only has read and execute permission. (Unix like)"
+                    ]
+                },
+                {
+                    "description": "The file array to get the permissions from.",
+                    "tagType": "parameter",
+                    "var": "file",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "file"
+            ],
+            "isArgOptional": [
+                false
             ],
             "varArgs": false,
             "body": null

@@ -10,8 +10,8 @@
         "description": "If and Mara block"
     },
     "Short If": {
-        "prefix": "if mara",
-        "body": ["sif (${1:condition}) ?> \t$0!"],
+        "prefix": "sif",
+        "body": ["sif (${1:condition}) ?> $0!"],
         "description": "Shorthand If block"
     },
     "Mara-If Block": {
@@ -37,7 +37,7 @@
     "Colonize Block": {
         "prefix": "colonize",
         "body": [
-            "colonize ${1:i} <- (${2:value} <| ${3:condition} <| ${4:increment}) ->",
+            "colonize (${1:i} <- ${2:value} <| ${3:condition} <| ${4:increment}) ->",
             "\t$0!",
             "<~"
         ],
@@ -93,6 +93,16 @@
         "body": ["tsea \"jaiva/time\"!", "$0"],
         "description": "Tsea Time"
     },
+    "Import Continuous": {
+        "prefix": "tseacontinuous",
+        "body": ["tsea \"jaiva/continuous\"!", "$0"],
+        "description": "Tsea Continuous"
+    },
+    "Import Threads": {
+        "prefix": "tseathreads",
+        "body": ["tsea \"jaiva/threads\"!", "$0"],
+        "description": "Tsea Threads"
+    },
     "Maak": {
         "prefix": "maak",
         "body": ["maak ${1:variable} <- $0!"],
@@ -123,6 +133,11 @@
         "body": ["$0:::"],
         "description": "Array Spread"
     },
+	"Extend Param": {
+		"prefix": "extend",
+		"body": ["", "\t|> $0 !"],
+		"description": "Extend a function call's parameters into a new line"
+	},
     "Block Comment": {
         "prefix": "comment",
         "body": ["{", "\t$0", "}"],

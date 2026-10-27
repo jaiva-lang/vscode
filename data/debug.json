@@ -1,5 +1,5 @@
 {
-    "version": "6.1.2",
+    "version": "7.0.0-beta.2",
     "tokens": [
         {
             "type": "TFunction",
@@ -73,6 +73,10 @@
             "name": "F~d_link",
             "exportSymbol": false,
             "toolTip": [
+                {
+                    "description": "This function has moved to the global scope and is now named \"linker\". Use that instead as this may be removed",
+                    "tagType": "deprecated"
+                },
                 {
                     "description": "Links the MapValue instance of 'a' into 'b' such that they hold the same value and if one is edited the other will also have that edit.",
                     "tagType": "GENERIC"

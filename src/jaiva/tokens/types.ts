@@ -203,7 +203,7 @@ export function docsToMarkdown(token: TokenDefault): string {
         if (hasPropertyOf<TFunction>(token, "args")) {
             const args: string[] = [];
             token.args.forEach((c, i) => {
-                args.push(c + (token.isArgOptional[i] ? "" : "?"));
+                args.push(c + (!token.isArgOptional[i] ? "" : "?"));
             });
             str = token.name + "(" + args.join(", ") + ")";
         } else if (

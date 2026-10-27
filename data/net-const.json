@@ -1,0 +1,635 @@
+{
+    "version": "7.0.0-beta.2",
+    "tokens": [
+        {
+            "type": "TStringVar",
+            "name": "NET_R_INTEGER",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_integer"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_INT",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_integer"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_INTEGER",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_integer"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_INT",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_integer"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_JAVA_UTF8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_java_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_MOD_UTF8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_java_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_JAVA_UTF8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_java_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_MOD_UTF8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_java_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_UTF8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. This has no read variant due to the nature of not knowing how many bytes the entire UTF8 chunk could be. Your problem.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_STRING",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. This has no read variant due to the nature of not knowing how many bytes the entire UTF8 chunk could be. Your problem.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_UTF_8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. This has no read variant due to the nature of not knowing how many bytes the entire UTF8 chunk could be. Your problem.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_DOUBLE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_double"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_DOUBLE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_double"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_LONG",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_long"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_LONG",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_long"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_BOOLEAN",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_boolean"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_BOOL",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_boolean"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_BOOLEAN",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_boolean"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_BOOL",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_boolean"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_BYTE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Jaiva doesn't actually have a byte type, it's converted to an integer of range 0 to 255, so keep that in mind.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_byte"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_BYTE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Jaiva doesn't actually have a byte type, it's converted to an integer of range 0 to 255, so keep that in mind.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_byte"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_BYTES",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Attempts to read at most the amount of bytes currently available and returns that. this is tcp bro rather use TCP_RU_BYTES",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_BYTEARR",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Attempts to read at most the amount of bytes currently available and returns that. this is tcp bro rather use TCP_RU_BYTES",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_R_BYTEBUFF",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Attempts to read at most the amount of bytes currently available and returns that. this is tcp bro rather use TCP_RU_BYTES",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_r_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_BYTES",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Attempts to read at most the amount of bytes currently available and returns that. this is tcp bro rather use TCP_RU_BYTES",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_BYTEARR",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Attempts to read at most the amount of bytes currently available and returns that. this is tcp bro rather use TCP_RU_BYTES",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_W_BYTEBUFF",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. Attempts to read at most the amount of bytes currently available and returns that. this is tcp bro rather use TCP_RU_BYTES",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_w_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_RU_BYTES",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. This one's special since it'll wait and keep collecting bytes until the buffer has reached N bytes.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_ru_u_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_RU_BYTEARR",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. This one's special since it'll wait and keep collecting bytes until the buffer has reached N bytes.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_ru_u_bytes"
+        },
+        {
+            "type": "TStringVar",
+            "name": "NET_RU_BYTEBUFF",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over tcp client/server streams. This one's special since it'll wait and keep collecting bytes until the buffer has reached N bytes.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "net_ru_u_bytes"
+        }
+    ]
+}

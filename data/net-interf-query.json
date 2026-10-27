@@ -1,0 +1,351 @@
+{
+    "version": "7.0.0-beta.2",
+    "tokens": [
+        {
+            "type": "TFunction",
+            "name": "F~net_iName",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Gets the name of the network interface",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iName(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_iDisplayName",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Get the display name of this network interface. usually a human readable string",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iDisplayName(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_iAddrIpv4List",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Gets the list of Ipv4 IPs as byte arrays (or strings) associated with the interface",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iAddrIpv4List(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                },
+                {
+                    "description": "Whether to format each byte array into the human readable IPv4 format",
+                    "tagType": "parameter",
+                    "var": "format",
+                    "type": "boolean",
+                    "optional": true
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array",
+                "format"
+            ],
+            "isArgOptional": [
+                false,
+                true
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_iAddrIpv6List",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Gets the list of Ipv6 IPs as byte arrays associated with the interface",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iAddrIpv6List(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                },
+                {
+                    "description": "Whether to format each byte array into the human readable IPv6 format",
+                    "tagType": "parameter",
+                    "var": "format",
+                    "type": "boolean",
+                    "optional": true
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array",
+                "format"
+            ],
+            "isArgOptional": [
+                false,
+                true
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_iActive",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Gets the boolean indicating whether the interface is up and running",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iActive(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_iLoopback",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Gets the boolean indicating whether the interface is a loopback one.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iLoopback(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_iVirtual",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "Gets the boolean indicating whether the interface is a virtual one. (or subinterface)",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iVirtual(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~net_iAddrMac",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "7.0.0"
+                },
+                {
+                    "description": "gets the hardware address of this interface (The MAC Address) If there isn't one this returns idk",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        " tsea \"jaiva/net/interf\"!",
+                        " ",
+                        " maak interfaces <- net_interfs()!",
+                        " maak firstInterface <- interfaces[0]!",
+                        " maak value <- net_iAddrMac(firstInterface)!"
+                    ]
+                },
+                {
+                    "description": "The array which to index into and get information of. Represents a network interface",
+                    "tagType": "parameter",
+                    "var": "array",
+                    "type": "[]",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "array"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        }
+    ]
+}

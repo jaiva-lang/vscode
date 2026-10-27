@@ -1,9 +1,9 @@
 {
-    "version": "6.1.2",
+    "version": "7.0.0-beta.2",
     "tokens": [
         {
             "type": "TStringVar",
-            "name": "R_INTEGER",
+            "name": "F_R_INTEGER",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -20,11 +20,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "r_integer"
+            "value": "f_r_integer"
         },
         {
             "type": "TStringVar",
-            "name": "R_INT",
+            "name": "F_R_INT",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -41,11 +41,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "r_integer"
+            "value": "f_r_integer"
         },
         {
             "type": "TStringVar",
-            "name": "W_INTEGER",
+            "name": "F_W_INTEGER",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -62,11 +62,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "w_integer"
+            "value": "f_w_integer"
         },
         {
             "type": "TStringVar",
-            "name": "W_INT",
+            "name": "F_W_INT",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -83,11 +83,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "w_integer"
+            "value": "f_w_integer"
         },
         {
             "type": "TStringVar",
-            "name": "R_JAVA_UTF8",
+            "name": "F_R_JAVA_UTF8",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -104,11 +104,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "r_java_utf8"
+            "value": "f_r_java_utf8"
         },
         {
             "type": "TStringVar",
-            "name": "R_MOD_UTF8",
+            "name": "F_R_MOD_UTF8",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -125,11 +125,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "r_java_utf8"
+            "value": "f_r_java_utf8"
         },
         {
             "type": "TStringVar",
-            "name": "W_JAVA_UTF8",
+            "name": "F_W_JAVA_UTF8",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -146,11 +146,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "w_java_utf8"
+            "value": "f_w_java_utf8"
         },
         {
             "type": "TStringVar",
-            "name": "W_MOD_UTF8",
+            "name": "F_W_MOD_UTF8",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -167,11 +167,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "w_java_utf8"
+            "value": "f_w_java_utf8"
         },
         {
             "type": "TStringVar",
-            "name": "W_UTF8",
+            "name": "F_W_UTF8",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -188,11 +188,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "w_utf8"
+            "value": "f_w_utf8"
         },
         {
             "type": "TStringVar",
-            "name": "W_STRING",
+            "name": "F_W_STRING",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -209,11 +209,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "w_utf8"
+            "value": "f_w_utf8"
         },
         {
             "type": "TStringVar",
-            "name": "W_UTF_8",
+            "name": "F_W_UTF_8",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -230,11 +230,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "w_utf8"
+            "value": "f_w_utf8"
         },
         {
             "type": "TStringVar",
-            "name": "R_DOUBLE",
+            "name": "F_R_DOUBLE",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -251,11 +251,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "r_double"
+            "value": "f_r_double"
         },
         {
             "type": "TStringVar",
-            "name": "W_DOUBLE",
+            "name": "F_W_DOUBLE",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -272,11 +272,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "w_double"
+            "value": "f_w_double"
         },
         {
             "type": "TStringVar",
-            "name": "R_LONG",
+            "name": "F_R_LONG",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -293,11 +293,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "r_long"
+            "value": "f_r_long"
         },
         {
             "type": "TStringVar",
-            "name": "W_LONG",
+            "name": "F_W_LONG",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -314,11 +314,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "w_long"
+            "value": "f_w_long"
         },
         {
             "type": "TStringVar",
-            "name": "R_BOOLEAN",
+            "name": "F_R_BOOLEAN",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -335,11 +335,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "r_boolean"
+            "value": "f_r_boolean"
         },
         {
             "type": "TStringVar",
-            "name": "R_BOOL",
+            "name": "F_R_BOOL",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -356,11 +356,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "r_boolean"
+            "value": "f_r_boolean"
         },
         {
             "type": "TStringVar",
-            "name": "W_BOOLEAN",
+            "name": "F_W_BOOLEAN",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -377,11 +377,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "w_boolean"
+            "value": "f_w_boolean"
         },
         {
             "type": "TStringVar",
-            "name": "W_BOOL",
+            "name": "F_W_BOOL",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -398,11 +398,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "w_boolean"
+            "value": "f_w_boolean"
         },
         {
             "type": "TStringVar",
-            "name": "R_BYTE",
+            "name": "F_R_BYTE",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -419,11 +419,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "r_byte"
+            "value": "f_r_byte"
         },
         {
             "type": "TStringVar",
-            "name": "W_BYTE",
+            "name": "F_W_BYTE",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -440,11 +440,11 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "w_byte"
+            "value": "f_w_byte"
         },
         {
             "type": "TStringVar",
-            "name": "R_BYTES",
+            "name": "F_R_BYTES",
             "exportSymbol": false,
             "toolTip": [
                 {
@@ -461,7 +461,7 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "r_bytes"
+            "value": "f_r_bytes"
         }
     ]
 }

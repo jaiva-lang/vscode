@@ -57,7 +57,7 @@ export function toMarkdown(doc: JDoc | null): string {
         return (
             " - **" +
             doc.var +
-            (doc.optional ? "?" : "") +
+            (!doc.optional ? "?" : "") +
             "** <- _" +
             doc.type +
             "_ : " +
@@ -65,7 +65,7 @@ export function toMarkdown(doc: JDoc | null): string {
         );
     } else if (doc.tagType === "deprecated") {
         const dep = doc as DeprecatedDoc;
-        return '<html><p style="color:red">' + dep.description + "</p></html>";
+        return "### " + dep.description + "\n\n";
     } else if (hasPropertyOf<ExampleDoc>(doc, "codeblock")) {
         return "```jaiva\n" + doc.codeblock.join("\n") + "\n```\n\n";
     } else if (hasPropertyOf<DependsOnDoc>(doc, "symbols")) {

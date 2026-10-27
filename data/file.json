@@ -1,6 +1,591 @@
 {
-    "version": "6.1.2",
+    "version": "7.0.0-beta.2",
     "tokens": [
+        {
+            "type": "TFunction",
+            "name": "F~f_creader",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Provides byte level reads into a file.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "Returns a [Continuous Function](../Continuous-Functions.md) over the file reading resource.",
+                    "tagType": "returns"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/file/bytes\"!",
+                        "tsea \"jaiva/continuous!\"",
+                        "tsea \"jaiva/types/numbers\"!",
+                        "",
+                        "@ If the file contains a UTF8 string then a 255 byte value",
+                        "",
+                        "maak conf <- f_creader(\"C:\\Users\\Wow\\myFile.jib\")!",
+                        "maak read <- conf(C_READ)!",
+                        "maak collected <- aowa!",
+                        "",
+                        "maak collect <-|!",
+                        "",
+                        "nikhil (conf(C_EOF)()') ->",
+                        "    maak byte <- read(F_R_BYTE)!",
+                        "",
+                        "    sif (byte?) <? nevermind!",
+                        "",
+                        "    sif (byte != 255) ?> collect <- arrLit(collect:::, byte)!",
+                        "<~",
+                        "",
+                        "conf(C_CLOSE)()!",
+                        "",
+                        "khuluma(t_strFromByteArr(collect:::))!"
+                    ]
+                },
+                {
+                    "description": "Absolute path",
+                    "tagType": "parameter",
+                    "var": "filePath",
+                    "type": "string",
+                    "optional": false
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "filePath"
+            ],
+            "isArgOptional": [
+                false
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TFunction",
+            "name": "F~f_cwriter",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Provides byte level writes into a file.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "Returns a [Continuous Function](../Continuous-Functions.md) over the file writing resource.",
+                    "tagType": "returns"
+                },
+                {
+                    "tagType": "example",
+                    "codeblock": [
+                        "tsea \"jaiva/file/bytes\"!",
+                        "tsea \"jaiva/continuous!\"",
+                        "",
+                        "maak cont <- f_cwriter(\"C:\\Users\\Wow\\myFile.jib\")!",
+                        "maak write <- cont(C_OUTPUT)!",
+                        "",
+                        "write(F_W_UTF8, \"What's Up Dawg??\")!",
+                        "write(F_W_BYTE, 255)! @ Write 255 marker so we know where the UTF8 bytes end.",
+                        "",
+                        "cont(C_FLUSH)()!",
+                        "cont(C_CLOSE)()!"
+                    ]
+                },
+                {
+                    "description": "The (Absolute) file path to write to.",
+                    "tagType": "parameter",
+                    "var": "filePath",
+                    "type": "string",
+                    "optional": false
+                },
+                {
+                    "description": "Append to the file if it already exists, otherwise overwrite. Defaults to true, which appends.",
+                    "tagType": "parameter",
+                    "var": "append",
+                    "type": "boolean",
+                    "optional": true
+                }
+            ],
+            "lineNumber": -1,
+            "args": [
+                "filePath",
+                "append"
+            ],
+            "isArgOptional": [
+                false,
+                true
+            ],
+            "varArgs": false,
+            "body": null
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_R_INTEGER",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_r_integer"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_R_INT",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_r_integer"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_W_INTEGER",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the write function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_w_integer"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_W_INT",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the write function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_w_integer"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_R_JAVA_UTF8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_r_java_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_R_MOD_UTF8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_r_java_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_W_JAVA_UTF8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the write function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_w_java_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_W_MOD_UTF8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the write function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_w_java_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_W_UTF8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. This has no read variant due to the nature of not knowing how many bytes the entire UTF8 chunk could be. Your problem.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the write function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_w_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_W_STRING",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. This has no read variant due to the nature of not knowing how many bytes the entire UTF8 chunk could be. Your problem.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the write function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_w_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_W_UTF_8",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. This has no read variant due to the nature of not knowing how many bytes the entire UTF8 chunk could be. Your problem.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the write function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_w_utf8"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_R_DOUBLE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_r_double"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_W_DOUBLE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the write function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_w_double"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_R_LONG",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_r_long"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_W_LONG",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the write function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_w_long"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_R_BOOLEAN",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_r_boolean"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_R_BOOL",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_r_boolean"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_W_BOOLEAN",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the write function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_w_boolean"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_W_BOOL",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. ",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the write function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_w_boolean"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_R_BYTE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. Jaiva doesn't actually have a byte type, it's converted to an integer of range 0 to 255, so keep that in mind.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_r_byte"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_W_BYTE",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. Jaiva doesn't actually have a byte type, it's converted to an integer of range 0 to 255, so keep that in mind.",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the write function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_w_byte"
+        },
+        {
+            "type": "TStringVar",
+            "name": "F_R_BYTES",
+            "exportSymbol": false,
+            "toolTip": [
+                {
+                    "tagType": "from",
+                    "version": "6.1.0"
+                },
+                {
+                    "description": "Continuous Function Input constant over file streams. Attempts to read up to N remaining bytes. (You need to provide N)",
+                    "tagType": "GENERIC"
+                },
+                {
+                    "description": "This is for the read function.",
+                    "tagType": "devnote"
+                }
+            ],
+            "lineNumber": -1,
+            "value": "f_r_bytes"
+        },
         {
             "type": "TStringVar",
             "name": "f_name",
@@ -11,7 +596,7 @@
                     "tagType": "GENERIC"
                 },
                 {
-                    "description": "If you call this within the REPL, or somehow the filePath is null, it holds \"FileApi\"",
+                    "description": "If you call this within the REPL, or somehow the filePath is null, it holds \"file\"",
                     "tagType": "devnote"
                 },
                 {
@@ -40,7 +625,7 @@
                     "tagType": "GENERIC"
                 },
                 {
-                    "description": "If you call this within the REPL, or somehow the filePath is null, it holds \"FileApi\"",
+                    "description": "If you call this within the REPL, or somehow the filePath is null, it holds \"file\"",
                     "tagType": "devnote"
                 },
                 {
@@ -55,7 +640,7 @@
                 }
             ],
             "lineNumber": -1,
-            "value": "C:\\Users\\ACER\\Documents\\code\\jaiva-vscode\\jaiva"
+            "value": "C:\\Users\\ACER\\Documents\\code\\jaiva\\vscode\\data\\jaiva"
         },
         {
             "type": "TArrayVar",
@@ -108,8 +693,8 @@
                     "tagType": "example",
                     "codeblock": [
                         "maak file <- f_file(\"data/myFile.txt\")!",
-                        "khuluma(\"FileApi name: \" + file[0])!",
-                        "khuluma(\"FileApi directory: \" + file[1])!"
+                        "khuluma(\"file name: \" + file[0])!",
+                        "khuluma(\"file directory: \" + file[1])!"
                     ]
                 },
                 {
@@ -155,7 +740,7 @@
                         "<| arrLit(\"Hello, World!\", \"This is a new file.\")!",
                         "<| (true, true, false)!",
                         "if (success) ->",
-                        "    khuluma(\"FileApi created successfully!\")!",
+                        "    khuluma(\"file created successfully!\")!",
                         "<~ else ->",
                         "    khuluma(\"Failed to createFunction file.\")!",
                         "<~"
@@ -392,595 +977,6 @@
             ],
             "varArgs": false,
             "body": null
-        },
-        {
-            "type": "TFunction",
-            "name": "F~f_creader",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Provides byte level reads into a file.",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "Returns a [Continuous Function](../Continuous-Functions.md) over the file reading resource.",
-                    "tagType": "returns"
-                },
-                {
-                    "tagType": "example",
-                    "codeblock": [
-                        "tsea \"jaiva/file/bytes\"!",
-                        "tsea \"jaiva/continuous!\"",
-                        "tsea \"jaiva/types/numbers\"!",
-                        "",
-                        "@ If the file contains a UTF8 string then a 255 byte value",
-                        "",
-                        "maak conf <- f_creader(\"C:\\Users\\Wow\\myFile.jib\")!",
-                        "maak read <- conf(C_READ)!",
-                        "maak collected <- aowa!",
-                        "",
-                        "maak collect <-|!",
-                        "",
-                        "nikhil (conf(C_EOF)()') ->",
-                        "    maak byte <- read(R_BYTE)!",
-                        "",
-                        "    if (byte?) ->",
-                        "        nevermind!",
-                        "    <~",
-                        "",
-                        "    if (byte != 255) ->",
-                        "        collect <- arrLit(collect:::, byte)!",
-                        "    <~",
-                        "<~",
-                        "",
-                        "conf(C_CLOSE)()!",
-                        "",
-                        "khuluma(t_strFromByteArr(collect:::))!"
-                    ]
-                },
-                {
-                    "description": "Absolute path",
-                    "tagType": "parameter",
-                    "var": "filePath",
-                    "type": "string",
-                    "optional": false
-                }
-            ],
-            "lineNumber": -1,
-            "args": [
-                "filePath"
-            ],
-            "isArgOptional": [
-                false
-            ],
-            "varArgs": false,
-            "body": null
-        },
-        {
-            "type": "TFunction",
-            "name": "F~f_cwriter",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Provides byte level writes into a file.",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "Returns a [Continuous Function](../Continuous-Functions.md) over the file writing resource.",
-                    "tagType": "returns"
-                },
-                {
-                    "tagType": "example",
-                    "codeblock": [
-                        "tsea \"jaiva/file/bytes\"!",
-                        "tsea \"jaiva/continuous!\"",
-                        "",
-                        "maak cont <- f_cwriter(\"C:\\Users\\Wow\\myFile.jib\")!",
-                        "maak write <- cont(C_OUTPUT)!",
-                        "",
-                        "write(W_UTF8, \"What's Up Dawg??\")!",
-                        "write(W_BYTE, 255)! @ Write 255 marker so we know where the UTF8 bytes end.",
-                        "",
-                        "cont(C_FLUSH)()!",
-                        "cont(C_CLOSE)()!"
-                    ]
-                },
-                {
-                    "description": "The (Absolute) file path to write to.",
-                    "tagType": "parameter",
-                    "var": "filePath",
-                    "type": "string",
-                    "optional": false
-                },
-                {
-                    "description": "Append to the file if it already exists, otherwise overwrite. Defaults to true, which appends.",
-                    "tagType": "parameter",
-                    "var": "append",
-                    "type": "boolean",
-                    "optional": true
-                }
-            ],
-            "lineNumber": -1,
-            "args": [
-                "filePath",
-                "append"
-            ],
-            "isArgOptional": [
-                false,
-                true
-            ],
-            "varArgs": false,
-            "body": null
-        },
-        {
-            "type": "TStringVar",
-            "name": "R_INTEGER",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the read function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "r_integer"
-        },
-        {
-            "type": "TStringVar",
-            "name": "R_INT",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the read function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "r_integer"
-        },
-        {
-            "type": "TStringVar",
-            "name": "W_INTEGER",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the write function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "w_integer"
-        },
-        {
-            "type": "TStringVar",
-            "name": "W_INT",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the write function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "w_integer"
-        },
-        {
-            "type": "TStringVar",
-            "name": "R_JAVA_UTF8",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the read function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "r_java_utf8"
-        },
-        {
-            "type": "TStringVar",
-            "name": "R_MOD_UTF8",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the read function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "r_java_utf8"
-        },
-        {
-            "type": "TStringVar",
-            "name": "W_JAVA_UTF8",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the write function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "w_java_utf8"
-        },
-        {
-            "type": "TStringVar",
-            "name": "W_MOD_UTF8",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the write function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "w_java_utf8"
-        },
-        {
-            "type": "TStringVar",
-            "name": "W_UTF8",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. This has no read variant due to the nature of not knowing how many bytes the entire UTF8 chunk could be. Your problem.",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the write function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "w_utf8"
-        },
-        {
-            "type": "TStringVar",
-            "name": "W_STRING",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. This has no read variant due to the nature of not knowing how many bytes the entire UTF8 chunk could be. Your problem.",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the write function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "w_utf8"
-        },
-        {
-            "type": "TStringVar",
-            "name": "W_UTF_8",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. This has no read variant due to the nature of not knowing how many bytes the entire UTF8 chunk could be. Your problem.",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the write function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "w_utf8"
-        },
-        {
-            "type": "TStringVar",
-            "name": "R_DOUBLE",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the read function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "r_double"
-        },
-        {
-            "type": "TStringVar",
-            "name": "W_DOUBLE",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the write function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "w_double"
-        },
-        {
-            "type": "TStringVar",
-            "name": "R_LONG",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the read function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "r_long"
-        },
-        {
-            "type": "TStringVar",
-            "name": "W_LONG",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the write function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "w_long"
-        },
-        {
-            "type": "TStringVar",
-            "name": "R_BOOLEAN",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the read function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "r_boolean"
-        },
-        {
-            "type": "TStringVar",
-            "name": "R_BOOL",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the read function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "r_boolean"
-        },
-        {
-            "type": "TStringVar",
-            "name": "W_BOOLEAN",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the write function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "w_boolean"
-        },
-        {
-            "type": "TStringVar",
-            "name": "W_BOOL",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. ",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the write function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "w_boolean"
-        },
-        {
-            "type": "TStringVar",
-            "name": "R_BYTE",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. Jaiva doesn't actually have a byte type, it's converted to an integer of range 0 to 255, so keep that in mind.",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the read function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "r_byte"
-        },
-        {
-            "type": "TStringVar",
-            "name": "W_BYTE",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. Jaiva doesn't actually have a byte type, it's converted to an integer of range 0 to 255, so keep that in mind.",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the write function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "w_byte"
-        },
-        {
-            "type": "TStringVar",
-            "name": "R_BYTES",
-            "exportSymbol": false,
-            "toolTip": [
-                {
-                    "tagType": "from",
-                    "version": "6.1.0"
-                },
-                {
-                    "description": "Continuous Function Input constant over file streams. Attempts to read up to N remaining bytes. (You need to provide N)",
-                    "tagType": "GENERIC"
-                },
-                {
-                    "description": "This is for the read function.",
-                    "tagType": "devnote"
-                }
-            ],
-            "lineNumber": -1,
-            "value": "r_bytes"
         }
     ]
 }
