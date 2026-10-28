@@ -1,6 +1,6 @@
 import * as v from "vscode";
 import * as j from "./jaiva/jaiva";
-import * as providers from "./vs/providers";
+import * as providers from "./providers";
 
 export class AllHandler {
     public shared: j.SharedValues;

@@ -1,13 +1,12 @@
-import * as v from "vscode";
-import * as j from "../jaiva/jaiva";
-import { TokenDefault, ImportedFrom } from "../jaiva/tokens/types";
+import * as vs from "vscode";
+import * as jaiva from "../jaiva";
 
 export class IdentificationProvider {
     private findToken(
-        shared: j.SharedValues,
-        document: v.TextDocument,
-        pos: v.Position,
-    ): TokenDefault | null {
+        shared: jaiva.SharedValues,
+        document: vs.TextDocument,
+        pos: vs.Position,
+    ): jaiva.Tokens.TokenDefault | null {
         const range = document.getWordRangeAtPosition(pos);
         const word = document.getText(range);
 
@@ -54,30 +53,38 @@ export class IdentificationProvider {
     }
 
     provideDocs(
-        shared: j.SharedValues,
-        document: v.TextDocument,
-        pos: v.Position,
-    ): v.ProviderResult<v.Hover> {
+        shared: jaiva.SharedValues,
+        document: vs.TextDocument,
+        pos: vs.Position,
+    ): vs.ProviderResult<vs.Hover> {
         const found = this.findToken(shared, document, pos);
 
         if (found == null) return;
 
-        return new v.Hover(j.Tokens.docsToMarkdown(found));
+        return new vs.Hover(jaiva.Tokens.docsToMarkdown(found));
     }
 
     provideDefintion(
-        shared: j.SharedValues,
-        document: v.TextDocument,
-        pos: v.Position,
-    ): v.ProviderResult<v.Definition> {
+        shared: jaiva.SharedValues,
+        document: vs.TextDocument,
+        pos: vs.Position,
+    ): vs.ProviderResult<vs.Definition> {
         const found = this.findToken(shared, document, pos);
 
         if (found == null) return;
 
         let lineNumber = found.lineNumber;
-        if (j.Tokens.hasPropertyOf<ImportedFrom>(found, "importedFromLine")) {
+        if (
+            jaiva.Tokens.hasPropertyOf<jaiva.Tokens.ImportedFrom>(
+                found,
+                "importedFromLine",
+            )
+        ) {
             lineNumber = found.importedFromLine;
         }
-        return new v.Location(document.uri, new v.Position(lineNumber - 1, 0));
+        return new vs.Location(
+            document.uri,
+            new vs.Position(lineNumber - 1, 0),
+        );
     }
 }

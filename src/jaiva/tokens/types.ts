@@ -1,11 +1,12 @@
 import {
+    DeprecatedDoc,
+    GenericDoc,
+    ParameterDoc,
     JDoc,
     toMarkdown,
-    ParameterDoc,
-    GenericDoc,
-    DeprecatedDoc,
 } from "./jdoc";
-import { JSONObject } from "../../JSONObject";
+import { JSONObject } from "../../utils";
+import { LineRange, NonGlobalLineRange } from "..";
 
 /**
  * The types that we care about the most
@@ -31,15 +32,6 @@ const needed = [
     "TNumberVar",
     "TImport",
 ];
-
-/**
- * The scope that this particular symbol is available within. -1 means it's availble globally.
- * This is usually a direct copy of the parent scope's lineNumebr and lineEnd into one argument
- * that goes with the token itself
- */
-export type LineRange = NonGlobalLineRange | -1;
-
-export type NonGlobalLineRange = [number, number];
 
 /**
  * Base token. All tokens have these properties

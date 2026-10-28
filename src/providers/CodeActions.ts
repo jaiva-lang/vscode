@@ -1,19 +1,19 @@
-import * as v from "vscode";
+import * as vs from "vscode";
 
-import { RewriteDiagnostic } from "./Diagnostics";
+import { RewriteDiagnostic } from "./";
 
 export class CodeActions {
     public provideCodeActions(
-        document: v.TextDocument,
-        range: v.Range | v.Selection,
-        context: v.CodeActionContext,
-        token: v.CancellationToken,
-    ): v.ProviderResult<(v.Command | v.CodeAction)[]> {
-        const actions: v.CodeAction[] = [];
+        document: vs.TextDocument,
+        range: vs.Range | vs.Selection,
+        context: vs.CodeActionContext,
+        token: vs.CancellationToken,
+    ): vs.ProviderResult<(vs.Command | vs.CodeAction)[]> {
+        const actions: vs.CodeAction[] = [];
 
         for (const diagnostic of context.diagnostics) {
             if (
-                diagnostic.severity !== v.DiagnosticSeverity.Hint ||
+                diagnostic.severity !== vs.DiagnosticSeverity.Hint ||
                 typeof diagnostic.code !== "string"
             )
                 continue;
@@ -22,7 +22,7 @@ export class CodeActions {
 
             if (!rewriteDiagnostic.rewrite) continue;
 
-            let action: v.CodeAction | undefined;
+            let action: vs.CodeAction | undefined;
 
             switch (diagnostic.code) {
                 case "sif":
@@ -44,15 +44,15 @@ export class CodeActions {
     }
 
     private sif(
-        document: v.TextDocument,
+        document: vs.TextDocument,
         diagnostic: RewriteDiagnostic,
-    ): v.CodeAction {
-        const action = new v.CodeAction(
+    ): vs.CodeAction {
+        const action = new vs.CodeAction(
             "Convert to sif",
-            v.CodeActionKind.QuickFix,
+            vs.CodeActionKind.QuickFix,
         );
 
-        const edit = new v.WorkspaceEdit();
+        const edit = new vs.WorkspaceEdit();
 
         const source = document.getText(diagnostic.range);
 
@@ -114,12 +114,12 @@ export class CodeActions {
     }
 
     private argExt(
-        document: v.TextDocument,
+        document: vs.TextDocument,
         diagnostic: RewriteDiagnostic,
-    ): v.CodeAction {
-        const action = new v.CodeAction(
+    ): vs.CodeAction {
+        const action = new vs.CodeAction(
             "Use argument extension syntax",
-            v.CodeActionKind.QuickFix,
+            vs.CodeActionKind.QuickFix,
         );
 
         // TODO: Set action.edit using diagnostic.rewrite.

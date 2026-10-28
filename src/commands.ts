@@ -1,6 +1,5 @@
-import { FilesAndShii } from "./repos/config";
-import { Repositories } from "./repos/repos";
-import { Diagnostics } from "./vs/providers";
+import { Repositories, FilesAndShii } from "./repos";
+import { Diagnostics } from "./providers";
 
 class Command {
     name: string;

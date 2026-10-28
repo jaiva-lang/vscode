@@ -1,8 +1,7 @@
 import * as T from "./tokens/types";
 import * as fs from "fs";
 import * as path from "path";
-import { BetterPath } from "../BetterPath";
-import { FilesAndShii } from "../repos/config";
+import { BetterPath } from "../utils";
 import { RepoLib } from "../repos/repos";
 
 export type Library = {

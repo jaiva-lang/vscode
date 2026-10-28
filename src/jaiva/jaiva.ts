@@ -1,25 +1,27 @@
 import { spawn, spawnSync } from "child_process";
-
-import * as Tokens from "./tokens/types";
-import * as JaivaLibraries from "./globals";
-import { MultiMap } from "../mmap";
-import * as Docs from "./tokens/jdoc";
-import { Diagnostics } from "../vs/providers";
-import * as vscode from "vscode";
+import * as vs from "vscode";
 import * as path from "path";
-import { BetterPath } from "../BetterPath";
-import { RepoLib } from "../repos/repos";
-import { TokenDefault } from "./tokens/types";
 
-export { Tokens, JaivaLibraries, Docs };
+import { MultiMap, BetterPath } from "../utils";
+import { Diagnostics } from "../providers";
+import { RepoLib } from "../repos";
 
-export type Rewrite = {
-    token: TokenDefault;
+import {
+    hasPropertyOf,
+    NonGlobalLineRange,
+    LineRange,
+    Tokens,
+    Globals,
+    Docs,
+} from "./";
+
+export type RewriteSuggestion = {
+    token: Tokens.TokenDefault;
     message: string;
     rewriteId: string;
-    lineRange: Tokens.NonGlobalLineRange;
+    lineRange: NonGlobalLineRange;
 };
-export type RewriteArr = Rewrite[];
+export type RewriteArr = RewriteSuggestion[];
 
 export type InterprterStr = "ERR_INTERP" | "ERR_INTERP_DIED" | "INTERP_SUCCESS";
 
@@ -64,7 +66,7 @@ export class SharedValues extends Base {
     private tokenList: Tokens.TokenDefault[] = [];
     private readCopy: Tokens.TokenDefault[] = [];
     public rewriteArr: RewriteArr = [];
-    private libraryMap: Map<string, JaivaLibraries.Library> = new Map();
+    private libraryMap: Map<string, Globals.Library> = new Map();
     private externalFileCLI: JaivaCLI = new JaivaCLI();
     public definitionsMap: MultiMap<string, Tokens.TokenDefault> =
         new MultiMap();
@@ -80,7 +82,7 @@ export class SharedValues extends Base {
         ...libFiles: RepoLib[]
     ): void {
         libFiles.forEach((lib) => {
-            const load = JaivaLibraries.loadFrom(repoBasePath, lib);
+            const load = Globals.loadFrom(repoBasePath, lib);
             let libTitle = lib.path;
             console.log("Loaded " + libTitle);
 
@@ -134,7 +136,7 @@ export class SharedValues extends Base {
         ];
 
         globals.forEach((lib) => {
-            const load = JaivaLibraries.load(lib, context);
+            const load = Globals.load(lib, context);
             console.log("Loaded " + lib);
 
             if (load.version !== vers) {
@@ -153,10 +155,10 @@ export class SharedValues extends Base {
         });
     }
 
-    public err(doc: vscode.TextDocument, str: string): void {
+    public err(doc: vs.TextDocument, str: string): void {
         try {
             let any = JSON.parse(str);
-            if (Tokens.hasPropertyOf<StreamerOutput>(any, "streamer")) {
+            if (hasPropertyOf<StreamerOutput>(any, "streamer")) {
                 any.lineNumber = any.lineNumber == -1 ? 1 : any.lineNumber;
                 if (this.getDiagnostics()) {
                     this.getDiagnostics()?.err(doc, any);
@@ -169,7 +171,7 @@ export class SharedValues extends Base {
         }
     }
 
-    public write(doc: vscode.TextDocument, str: string): void {
+    public write(doc: vs.TextDocument, str: string): void {
         const arr = this.parse(str, Context.NORMAL, doc);
         if (arr == null) return;
         this.tokenList = arr[0];
@@ -182,12 +184,12 @@ export class SharedValues extends Base {
     public parse(
         str: string,
         context: Context,
-        doc: vscode.TextDocument,
-    ): [TokenDefault[], RewriteArr] | null {
+        doc: vs.TextDocument,
+    ): [Tokens.TokenDefault[], RewriteArr] | null {
         let any;
         try {
             any = JSON.parse(str);
-            if (Tokens.hasPropertyOf<StreamerOutput>(any, "streamer")) {
+            if (hasPropertyOf<StreamerOutput>(any, "streamer")) {
                 // if (this.getDiagnostics()) {
                 //     this.getDiagnostics()?.err(doc, any);
                 // }
@@ -205,14 +207,14 @@ export class SharedValues extends Base {
         return [parsed, rewriteArr];
     }
 
-    private normalize(doc: vscode.TextDocument, str: string): string {
+    private normalize(doc: vs.TextDocument, str: string): string {
         return path.resolve(path.dirname(doc.uri.fsPath), str);
     }
     private loadLibraryAt(
         importTok: null | Tokens.ImportToken,
         name: string,
-        range: Tokens.LineRange,
-        doc: vscode.TextDocument,
+        range: LineRange,
+        doc: vs.TextDocument,
     ): Tokens.TokenDefault[] {
         const fromLib = importTok?.isLib || importTok == null;
         var tokens = fromLib
@@ -270,22 +272,22 @@ export class SharedValues extends Base {
     }
 
     private add(
-        parentRange: Tokens.LineRange,
+        parentRange: LineRange,
         arr: any[],
         context: Context = Context.NORMAL,
-        doc: vscode.TextDocument,
+        doc: vs.TextDocument,
         rewriteArr: RewriteArr,
     ): Tokens.TokenDefault[] {
         const tokens: Tokens.TokenDefault[] = [];
         for (let token of arr) {
-            if (Tokens.hasPropertyOf<Tokens.TokenDefault>(token, "type")) {
+            if (hasPropertyOf<Tokens.TokenDefault>(token, "type")) {
                 const out = Tokens.toScopedToken(token);
                 if (out === null) {
                     // normal token. cast and add.
                     if (Tokens.isTheTokensWeNeed(token)) {
                         if (context === Context.IMPORT) {
                             if (
-                                Tokens.hasPropertyOf<Tokens.SymbolToken>(
+                                hasPropertyOf<Tokens.SymbolToken>(
                                     token,
                                     "exportSymbol",
                                 )
@@ -304,7 +306,7 @@ export class SharedValues extends Base {
                         tokens.push(token);
 
                         if (
-                            Tokens.hasPropertyOf<Tokens.TFuncCall>(
+                            hasPropertyOf<Tokens.TFuncCall>(
                                 token,
                                 "functionName",
                             )
@@ -315,7 +317,7 @@ export class SharedValues extends Base {
                             let lineNum = -1;
                             for (const arg of args) {
                                 if (
-                                    Tokens.hasPropertyOf<TokenDefault>(
+                                    hasPropertyOf<Tokens.TokenDefault>(
                                         arg,
                                         "type",
                                     )
@@ -346,12 +348,7 @@ export class SharedValues extends Base {
                                 });
                         }
 
-                        if (
-                            Tokens.hasPropertyOf<Tokens.ImportToken>(
-                                token,
-                                "isLib",
-                            )
-                        ) {
+                        if (hasPropertyOf<Tokens.ImportToken>(token, "isLib")) {
                             const a = this.loadLibraryAt(
                                 token,
                                 token.fileName,
@@ -365,7 +362,7 @@ export class SharedValues extends Base {
                     const [scoped, otherTokens] = out;
                     if (context === Context.IMPORT) {
                         if (
-                            Tokens.hasPropertyOf<Tokens.TFunction>(
+                            hasPropertyOf<Tokens.TFunction>(
                                 token,
                                 "exportSymbol",
                             )
@@ -383,7 +380,7 @@ export class SharedValues extends Base {
                     tokens.push(...other);
                     if (context !== Context.IMPORT) {
                         if (
-                            Tokens.hasPropertyOf<Tokens.TIfStatement>(
+                            hasPropertyOf<Tokens.TIfStatement>(
                                 scoped,
                                 "elseBody", // only TIfStatement has an else body.
                             ) &&
@@ -396,7 +393,7 @@ export class SharedValues extends Base {
                                 (scoped.elseIfs == null ||
                                     (Array.isArray(scoped.elseIfs) &&
                                         scoped.elseIfs.length == 0)) && // No else ifs.
-                                !Tokens.hasPropertyOf<Tokens.TIfStatement>( // It cannot have an if inside.
+                                !hasPropertyOf<Tokens.TIfStatement>( // It cannot have an if inside.
                                     otherTokens[0][1][0],
                                     "elseBody",
                                 )
@@ -439,10 +436,10 @@ export class SharedValues extends Base {
 
     private others(
         scoped: Tokens.ScopedToken,
-        lineRange: Tokens.LineRange,
+        lineRange: LineRange,
         rewriteArr: RewriteArr,
     ): Tokens.TokenDefault[] {
-        if (Tokens.hasPropertyOf<Tokens.TForLoop>(scoped, "variable")) {
+        if (hasPropertyOf<Tokens.TForLoop>(scoped, "variable")) {
             // TForLoop contributes a variable to the scope. We need to add that variable to the list of tokens.
             // contributes iterator
             if (scoped.arrayVariable === null) {
@@ -477,10 +474,7 @@ export class SharedValues extends Base {
                 return [out];
             }
         } else if (
-            Tokens.hasPropertyOf<Tokens.TTryCatchStatement>(
-                scoped,
-                "catchProperties",
-            )
+            hasPropertyOf<Tokens.TTryCatchStatement>(scoped, "catchProperties")
         ) {
             const all = this.readCopy.filter((t) => {
                 if (t.type === "TFunction") return false;
@@ -515,7 +509,7 @@ export class SharedValues extends Base {
 
             this.definitionsMap.add(tok.name, tok);
             return [tok];
-        } else if (Tokens.hasPropertyOf<Tokens.TFunction>(scoped, "args")) {
+        } else if (hasPropertyOf<Tokens.TFunction>(scoped, "args")) {
             const tokens: Tokens.TokenDefault[] = [];
             // try to find the arg docs in JDoc
             // add the arguments of the function
@@ -535,10 +529,7 @@ export class SharedValues extends Base {
                     // filter and find by arg name
                     const found = doc.find((d) => {
                         if (
-                            Tokens.hasPropertyOf<Docs.ParameterDoc>(
-                                d,
-                                "tagType",
-                            ) &&
+                            hasPropertyOf<Docs.ParameterDoc>(d, "tagType") &&
                             d.var === name
                         )
                             return d;
@@ -587,7 +578,7 @@ export class SharedValues extends Base {
         this.externalFileCLI.release();
     }
 
-    public getLibrary(name: string): JaivaLibraries.Library | undefined {
+    public getLibrary(name: string): Globals.Library | undefined {
         return this.libraryMap.get(name);
     }
 }
@@ -625,14 +616,14 @@ export class JaivaCLI extends Base {
         this.child.on("close", (code) => {
             console.log(`Jaiva exited with code ${code}`);
             if (code != 0) {
-                vscode.window
+                vs.window
                     .showErrorMessage(
                         "Jaiva crashed! Please reload your window",
                         "Reload",
                     )
                     .then((sel) => {
-                        if ((sel = "Reload")) {
-                            vscode.commands.executeCommand(
+                        if (sel === "Reload") {
+                            vs.commands.executeCommand(
                                 "workbench.action.reloadWindow",
                             );
                         }

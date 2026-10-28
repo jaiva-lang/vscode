@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import * as jaiva from "./jaiva/jaiva";
 import * as wrapFr from "./vscodeWrapper";
-import * as Providers from "./vs/providers";
+import * as Providers from "./providers";
 import * as c from "./repos/config";
 import { CommandRegistry } from "./commands";
 import { Repositories } from "./repos/repos";

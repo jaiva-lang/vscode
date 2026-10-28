@@ -1,15 +1,15 @@
-import * as v from "vscode";
-import * as j from "../jaiva/jaiva";
+import * as vs from "vscode";
+import * as jaiva from "../jaiva";
 
 export class Completions {
     constructor() {}
 
     public provide(
-        shared: j.SharedValues,
-        document: v.TextDocument,
-        position: v.Position,
-    ): v.CompletionItem[] {
-        const completions: v.CompletionItem[] = [];
+        shared: jaiva.SharedValues,
+        document: vs.TextDocument,
+        position: vs.Position,
+    ): vs.CompletionItem[] {
+        const completions: vs.CompletionItem[] = [];
 
         const tokens = shared.read();
 
@@ -41,9 +41,9 @@ export class Completions {
                 if (token.lineNumber !== -1)
                     if (lineNumber < token.lineNumber) return;
 
-                let completionItem: v.CompletionItem;
+                let completionItem: vs.CompletionItem;
                 if (token.type === "TFunction") {
-                    const fn = token as j.Tokens.TFunction;
+                    const fn = token as jaiva.Tokens.TFunction;
                     const funcName = token.name.slice(2);
                     let args: string[] = [];
                     for (let i = 0; i < fn.args.length; i++) {
@@ -56,34 +56,34 @@ export class Completions {
                     }
                     const completionString =
                         funcName + "(" + args.join(", ") + ")$0";
-                    completionItem = new v.CompletionItem(
+                    completionItem = new vs.CompletionItem(
                         funcName,
-                        v.CompletionItemKind.Function,
+                        vs.CompletionItemKind.Function,
                     );
-                    completionItem.insertText = new v.SnippetString(
+                    completionItem.insertText = new vs.SnippetString(
                         completionString,
                     );
                 } else {
-                    completionItem = new v.CompletionItem(
+                    completionItem = new vs.CompletionItem(
                         token.name,
-                        v.CompletionItemKind.Variable,
+                        vs.CompletionItemKind.Variable,
                     );
                     if (
-                        j.Tokens.hasPropertyOf<j.Tokens.FunctionArgument>(
+                        jaiva.Tokens.hasPropertyOf<jaiva.Tokens.FunctionArgument>(
                             token,
                             "argumentType",
                         )
                     ) {
                         completionItem.sortText = token.sortText + token.name;
                         if (token.argumentType === "F~") {
-                            completionItem.insertText = new v.SnippetString(
+                            completionItem.insertText = new vs.SnippetString(
                                 token.name + "($0)",
                             );
                         }
                     }
                 }
-                completionItem.documentation = new v.MarkdownString(
-                    j.Tokens.docsToMarkdown(token),
+                completionItem.documentation = new vs.MarkdownString(
+                    jaiva.Tokens.docsToMarkdown(token),
                 );
 
                 completions.push(completionItem);

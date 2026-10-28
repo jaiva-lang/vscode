@@ -1,4 +1,4 @@
-import { JSONObject } from "../JSONObject";
+import { JSONObject } from "../utils";
 import { FilesAndShii } from "./config";
 
 export type RepoConfig = {

@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { BetterPath } from "../BetterPath";
+import { BetterPath } from "../utils";
 import { RepoConfig } from "./repos";
 
 export type Config = {
