@@ -4,14 +4,22 @@ import * as Tokens from "./tokens/types";
 import * as JaivaLibraries from "./globals";
 import { MultiMap } from "../mmap";
 import * as Docs from "./tokens/jdoc";
-import { Diagnostics } from "../vscodeWrapper";
+import { Diagnostics } from "../vs/providers";
 import * as vscode from "vscode";
 import * as path from "path";
 import { BetterPath } from "../BetterPath";
 import { RepoLib } from "../repos/repos";
-import { FilesAndShii } from "../repos/config";
+import { TokenDefault } from "./tokens/types";
 
 export { Tokens, JaivaLibraries, Docs };
+
+export type Rewrite = {
+    token: TokenDefault;
+    message: string;
+    rewriteId: string;
+    lineRange: Tokens.NonGlobalLineRange;
+};
+export type RewriteArr = Rewrite[];
 
 export type InterprterStr = "ERR_INTERP" | "ERR_INTERP_DIED" | "INTERP_SUCCESS";
 
@@ -55,6 +63,7 @@ export enum Context {
 export class SharedValues extends Base {
     private tokenList: Tokens.TokenDefault[] = [];
     private readCopy: Tokens.TokenDefault[] = [];
+    public rewriteArr: RewriteArr = [];
     private libraryMap: Map<string, JaivaLibraries.Library> = new Map();
     private externalFileCLI: JaivaCLI = new JaivaCLI();
     public definitionsMap: MultiMap<string, Tokens.TokenDefault> =
@@ -163,13 +172,18 @@ export class SharedValues extends Base {
     public write(doc: vscode.TextDocument, str: string): void {
         const arr = this.parse(str, Context.NORMAL, doc);
         if (arr == null) return;
-        this.tokenList = arr;
+        this.tokenList = arr[0];
+        this.rewriteArr = arr[1];
         const globals = this.loadLibraryAt(null, "globals", -1, doc);
         this.tokenList.push(...globals);
         this.readCopy = [...this.tokenList];
     }
 
-    public parse(str: string, context: Context, doc: vscode.TextDocument) {
+    public parse(
+        str: string,
+        context: Context,
+        doc: vscode.TextDocument,
+    ): [TokenDefault[], RewriteArr] | null {
         let any;
         try {
             any = JSON.parse(str);
@@ -185,8 +199,10 @@ export class SharedValues extends Base {
         }
         if (!str.startsWith("[")) return null;
 
+        const rewriteArr: RewriteArr = [];
         const arr = any as any[];
-        return this.add(-1, arr, context, doc);
+        const parsed = this.add(-1, arr, context, doc, rewriteArr);
+        return [parsed, rewriteArr];
     }
 
     private normalize(doc: vscode.TextDocument, str: string): string {
@@ -201,13 +217,13 @@ export class SharedValues extends Base {
         const fromLib = importTok?.isLib || importTok == null;
         var tokens = fromLib
             ? (this.libraryMap.get(name)?.tokens ?? [])
-            : (this.parse(
+            : this.parse(
                   this.externalFileCLI.callSync(
                       this.normalize(doc, importTok?.filePath),
                   ),
                   Context.IMPORT,
                   doc,
-              ) ?? []);
+              )?.[0];
         var newTokens: any[] = [];
         if (importTok !== null) {
             const str = "\n\n_Imported from " + importTok.fileName + "_";
@@ -246,9 +262,10 @@ export class SharedValues extends Base {
         }
         return this.add(
             range,
-            newTokens.length == 0 ? tokens : newTokens,
+            newTokens.length == 0 ? tokens : (newTokens as any),
             fromLib ? Context.NORMAL : Context.IMPORT,
             doc,
+            [],
         );
     }
 
@@ -257,6 +274,7 @@ export class SharedValues extends Base {
         arr: any[],
         context: Context = Context.NORMAL,
         doc: vscode.TextDocument,
+        rewriteArr: RewriteArr,
     ): Tokens.TokenDefault[] {
         const tokens: Tokens.TokenDefault[] = [];
         for (let token of arr) {
@@ -286,6 +304,49 @@ export class SharedValues extends Base {
                         tokens.push(token);
 
                         if (
+                            Tokens.hasPropertyOf<Tokens.TFuncCall>(
+                                token,
+                                "functionName",
+                            )
+                        ) {
+                            const args = token.args;
+                            const max = 5; // one day it will be configurable.
+                            let current = 0;
+                            let lineNum = -1;
+                            for (const arg of args) {
+                                if (
+                                    Tokens.hasPropertyOf<TokenDefault>(
+                                        arg,
+                                        "type",
+                                    )
+                                ) {
+                                    // this is actually a token.
+                                    if (lineNum == -1) {
+                                        lineNum = arg.lineNumber;
+                                        current++;
+                                        continue;
+                                    }
+
+                                    if (current != max) {
+                                        // its already on multiple lines. no need.
+                                        if (lineNum != arg.lineNumber) break;
+                                        // otherwise
+                                        current++;
+                                    } else break;
+                                } else continue;
+                            }
+
+                            if (current == max)
+                                rewriteArr.push({
+                                    message:
+                                        "This function call can use argument extension syntax",
+                                    rewriteId: "argExt",
+                                    token: token,
+                                    lineRange: [lineNum, lineNum],
+                                });
+                        }
+
+                        if (
                             Tokens.hasPropertyOf<Tokens.ImportToken>(
                                 token,
                                 "isLib",
@@ -297,13 +358,7 @@ export class SharedValues extends Base {
                                 parentRange,
                                 doc,
                             );
-                            // check if is a isLib is true
-                            // if (token.isLib) {
                             tokens.push(...a);
-                            // } else {
-                            //     // if this runs, the lib basically exists.
-                            //     tokens.push;
-                            // }
                         }
                     }
                 } else {
@@ -314,20 +369,49 @@ export class SharedValues extends Base {
                                 token,
                                 "exportSymbol",
                             )
-                        ) {
+                        )
                             if (!token.exportSymbol) continue;
-                        } else {
-                            continue;
-                        }
+                            else continue;
                     }
                     scoped.within = parentRange;
                     tokens.push(scoped);
-                    const other = this.others(scoped, [
-                        scoped.lineNumber,
-                        scoped.lineEnd,
-                    ]);
+                    const other = this.others(
+                        scoped,
+                        [scoped.lineNumber, scoped.lineEnd],
+                        rewriteArr,
+                    );
                     tokens.push(...other);
                     if (context !== Context.IMPORT) {
+                        if (
+                            Tokens.hasPropertyOf<Tokens.TIfStatement>(
+                                scoped,
+                                "elseBody", // only TIfStatement has an else body.
+                            ) &&
+                            otherTokens.length == 1
+                        ) {
+                            if (
+                                !scoped.isShorthand && // If its alreayd shorthand this suggestion doesnt apply
+                                otherTokens[0][1].length == 1 && // Has to have one token obviously
+                                scoped.elseBody == null && // No else body
+                                (scoped.elseIfs == null ||
+                                    (Array.isArray(scoped.elseIfs) &&
+                                        scoped.elseIfs.length == 0)) && // No else ifs.
+                                !Tokens.hasPropertyOf<Tokens.TIfStatement>( // It cannot have an if inside.
+                                    otherTokens[0][1][0],
+                                    "elseBody",
+                                )
+                            )
+                                rewriteArr.push({
+                                    message:
+                                        "This if statement can be replaced by a single a single sif statement",
+                                    rewriteId: "sif",
+                                    token: scoped,
+                                    lineRange: [
+                                        scoped.lineNumber,
+                                        scoped.lineEnd,
+                                    ],
+                                });
+                        }
                         otherTokens.forEach((t) => {
                             // blocks
                             const arr2 = this.add(
@@ -335,6 +419,7 @@ export class SharedValues extends Base {
                                 t[1],
                                 Context.NORMAL,
                                 doc,
+                                rewriteArr,
                             );
                             tokens.push(...arr2);
                         });
@@ -355,6 +440,7 @@ export class SharedValues extends Base {
     private others(
         scoped: Tokens.ScopedToken,
         lineRange: Tokens.LineRange,
+        rewriteArr: RewriteArr,
     ): Tokens.TokenDefault[] {
         if (Tokens.hasPropertyOf<Tokens.TForLoop>(scoped, "variable")) {
             // TForLoop contributes a variable to the scope. We need to add that variable to the list of tokens.

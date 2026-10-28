@@ -70,12 +70,5 @@
             "\""
         ],
         // ["'", "'"],
-    ],
-    "folding": {
-        "offSide": true,
-        "markers": {
-            "start": "^\\s*(kwenza|nikhil|zama zama|if|colonize)\\b.*->\\s*$",
-            "end": "^\\s*<~\\s*$"
-        }
-    }
+    ]
 }

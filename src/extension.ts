@@ -1,15 +1,19 @@
 import * as vscode from "vscode";
 import * as jaiva from "./jaiva/jaiva";
 import * as wrapFr from "./vscodeWrapper";
+import * as Providers from "./vs/providers";
 import * as c from "./repos/config";
 import { CommandRegistry } from "./commands";
 import { Repositories } from "./repos/repos";
+import { registerJaivaBlocks } from "./blocks";
 // import { MultiMap } from "./mmap";
 
 const VERSION = "7.0.0-beta.2";
 
 export async function activate(context: vscode.ExtensionContext) {
     console.log("JAIVA VSCODE IS ACTIVE!!");
+
+    registerJaivaBlocks(context);
 
     const config = new c.FilesAndShii(context);
     await config.constr();
@@ -18,7 +22,7 @@ export async function activate(context: vscode.ExtensionContext) {
     const repoList = await repositories.getAll(config);
 
     const collection = vscode.languages.createDiagnosticCollection("jaiva");
-    const diagnostics = new wrapFr.Diagnostics(collection);
+    const diagnostics = new Providers.Diagnostics(collection);
 
     // Register commands
     const commandRegistry = new CommandRegistry(

@@ -1,6 +1,6 @@
 import { FilesAndShii } from "./repos/config";
 import { Repositories } from "./repos/repos";
-import { Diagnostics } from "./vscodeWrapper";
+import { Diagnostics } from "./vs/providers";
 
 class Command {
     name: string;

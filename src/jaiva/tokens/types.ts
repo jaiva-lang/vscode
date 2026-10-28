@@ -61,6 +61,7 @@ export type TTryCatchStatement = {
 
 export type TIfStatement = {
     type: "TIfStatement";
+    isShorthand: boolean;
     body: JSONObject; // TCodeblock
     elseIfs: TIfStatement[] | null; // Nested TIfStatements. No subsequent have nests
     elseBody: JSONObject | null; // TCodeblock
@@ -118,6 +119,7 @@ export type TVarRef = {
  */
 export type TFuncCall = {
     type: "TFuncCall";
+    args: TokenDefault[];
     functionName: string;
     getLength: boolean;
     spreadArr: boolean;
