@@ -2,7 +2,7 @@ import { spawn, spawnSync } from "child_process";
 import * as vs from "vscode";
 import * as path from "path";
 
-import { MultiMap, BetterPath } from "../utils";
+import { MultiMap, BetterPath, lastOutermostBracePair } from "../utils";
 import { Diagnostics } from "../providers";
 import { RepoLib } from "../repos";
 
@@ -20,6 +20,7 @@ export type RewriteSuggestion = {
     message: string;
     rewriteId: string;
     lineRange: NonGlobalLineRange;
+    columnRange?: NonGlobalLineRange;
 };
 export type RewriteArr = RewriteSuggestion[];
 
@@ -311,41 +312,11 @@ export class SharedValues extends Base {
                                 "functionName",
                             )
                         ) {
-                            const args = token.args;
-                            const max = 5; // one day it will be configurable.
-                            let current = 0;
-                            let lineNum = -1;
-                            for (const arg of args) {
-                                if (
-                                    hasPropertyOf<Tokens.TokenDefault>(
-                                        arg,
-                                        "type",
-                                    )
-                                ) {
-                                    // this is actually a token.
-                                    if (lineNum == -1) {
-                                        lineNum = arg.lineNumber;
-                                        current++;
-                                        continue;
-                                    }
-
-                                    if (current != max) {
-                                        // its already on multiple lines. no need.
-                                        if (lineNum != arg.lineNumber) break;
-                                        // otherwise
-                                        current++;
-                                    } else break;
-                                } else continue;
-                            }
-
-                            if (current == max)
-                                rewriteArr.push({
-                                    message:
-                                        "This function call can use argument extension syntax",
-                                    rewriteId: "argExt",
-                                    token: token,
-                                    lineRange: [lineNum, lineNum],
-                                });
+                            handleFuncCallPossibleRewrite(
+                                doc,
+                                token,
+                                rewriteArr,
+                            );
                         }
 
                         if (hasPropertyOf<Tokens.ImportToken>(token, "isLib")) {
@@ -658,4 +629,63 @@ export class JaivaCLI extends Base {
             this.child.stdin.write(args.join(" ") + "\n");
         });
     }
+}
+
+function handleFuncCallPossibleRewrite(
+    doc: vs.TextDocument,
+    token: Tokens.TFuncCall,
+    rewriteArr: RewriteArr,
+) {
+    let line = doc.getText(
+        new vs.Range(
+            new vs.Position(token.lineNumber - 1, 0),
+            new vs.Position(
+                token.lineNumber - 1,
+                doc.lineAt(token.lineNumber - 1).range.end.character,
+            ),
+        ),
+    );
+
+    const pair = lastOutermostBracePair(line);
+    if (pair == null) return;
+    const substr = line.substring(pair.second + 1, line.indexOf("!")).trim();
+
+    if (substr.length != 0) return;
+
+    const linesWithC = line?.split(/(?<!\$)@/);
+    if (linesWithC) line = linesWithC[0].trim()!;
+
+    console.log(line);
+    console.log(token.originalCall);
+
+    const args = token.args;
+    const max = 5; // one day it will be configurable.
+    let current = 0;
+    let lineNum = -1;
+    for (const arg of args) {
+        if (hasPropertyOf<Tokens.TokenDefault>(arg, "type")) {
+            // this is actually a token.
+            if (lineNum == -1) {
+                lineNum = arg.lineNumber;
+                current++;
+                continue;
+            }
+
+            if (current != max) {
+                // its already on multiple lines. no need.
+                if (lineNum != arg.lineNumber) break;
+                // otherwise
+                current++;
+            } else break;
+        } else continue;
+    }
+
+    if (current == max)
+        rewriteArr.push({
+            message: "This function call can use argument extension syntax",
+            rewriteId: "argExt",
+            token: token,
+            lineRange: [lineNum, lineNum],
+            columnRange: [pair.first, pair.second],
+        });
 }

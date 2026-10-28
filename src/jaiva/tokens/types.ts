@@ -113,6 +113,7 @@ export type TFuncCall = {
     type: "TFuncCall";
     args: TokenDefault[];
     functionName: string;
+    originalCall: string;
     getLength: boolean;
     spreadArr: boolean;
 } & TokenDefault;

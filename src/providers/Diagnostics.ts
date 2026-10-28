@@ -51,13 +51,12 @@ export class Diagnostics {
         rw: jaiva.RewriteSuggestion,
     ) {
         const range = rw.lineRange;
+        const column = rw.columnRange
+            ? rw.columnRange
+            : [0, document.lineAt(range[1] - 1).range.end.character];
 
-        const pos1 = new vs.Position(range[0] - 1, 0);
-
-        const pos2 = new vs.Position(
-            range[1] - 1,
-            document.lineAt(range[1] - 1).range.end.character,
-        );
+        const pos1 = new vs.Position(range[0] - 1, column[0]);
+        const pos2 = new vs.Position(range[1] - 1, column[1]);
 
         const diagnostic = new vs.Diagnostic(
             new vs.Range(pos1, pos2),
