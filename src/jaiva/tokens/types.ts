@@ -31,6 +31,10 @@ const needed = [
     "TStringVar",
     "TNumberVar",
     "TImport",
+    "TVarReassign",
+    "TFuncReturn",
+    "TThrowError",
+    "TExpression",
 ];
 
 /**
@@ -170,6 +174,28 @@ export function isDoc(value: unknown): value is JDoc {
  */
 export function hasPropertyOf<T>(value: unknown, property: string): value is T {
     return typeof value === "object" && value !== null && property in value;
+}
+
+/**
+ * Generic function which, if a given unknown object has a speciifc property, we tell the compiler
+ * that we are smarter than it and we are sure that its definitely for sure this type.
+ * Although this goes further to check if type is a specific string.
+ * @param value The unknwon type
+ * @param property The property to check for existenc
+ * @returns da bool
+ */
+export function hasPropertyOfAndType<T>(
+    value: unknown,
+    property: string,
+    type: string,
+): value is T {
+    return (
+        typeof value === "object" &&
+        value !== null &&
+        property in value &&
+        "type" in value &&
+        value.type === type
+    );
 }
 
 /**
@@ -387,3 +413,89 @@ export function toScopedToken(
 
     return [token, lines];
 }
+
+// The following tokens are only defiend such that we can extract a possible function call from it.
+// No other metadata is extracted really. unless its the case of TUnknownScalar whos handled but not
+// by this type defined below.
+
+export function couldHaveFunctionCallCandidate(
+    token: any,
+): CouldHaveFunctionCall | undefined {
+    let cand: CouldHaveFunctionCall;
+    let val: any;
+
+    if (
+        hasPropertyOfAndType<TUnknownScalar>(token, "value", "TUnknownScalar")
+    ) {
+        cand = token;
+        val = token.value;
+    } else if (
+        hasPropertyOfAndType<TVarReassign>(token, "value", "TVarReassign")
+    ) {
+        cand = token;
+        val = token.value;
+    } else if (
+        hasPropertyOfAndType<TFuncReturn>(token, "value", "TFuncReturn")
+    ) {
+        cand = token;
+        val = token.value;
+    } else if (hasPropertyOf<TThrowError>(token, "errorMessage")) {
+        cand = token;
+        val = token.errorMessage;
+    } else if (hasPropertyOf<TExpression>(token, "lhs")) {
+        cand = token;
+        val = token.rhs; // only the left hand side is a valid candidate.
+    } else return;
+
+    cand.getCandidateValue = () => val;
+
+    cand.candidate = !(
+        [
+            "string",
+            "boolean",
+            "number",
+            // object is valid, but not null.
+        ].includes(typeof val) || val === null
+    );
+
+    return cand;
+}
+
+export type CouldHaveFunctionCall = {
+    candidate: boolean;
+    getCandidateValue: () => any;
+};
+
+export type TExpression = {
+    type: "TExpression";
+    lhs: any;
+    op: string;
+    rhs: any;
+    statement: string;
+    statementType: number;
+} & TokenDefault &
+    CouldHaveFunctionCall;
+
+export type TThrowError = {
+    type: "TThrowError";
+    errorMessage: string | boolean | number | TokenDefault;
+} & TokenDefault &
+    CouldHaveFunctionCall;
+
+export type TUnknownScalar = {
+    type: "TUnknownScalar";
+    value: string | boolean | number | null | TokenDefault;
+} & TokenDefault &
+    CouldHaveFunctionCall;
+
+export type TFuncReturn = {
+    type: "TFuncReturn";
+    value: string | boolean | number | null | TokenDefault;
+} & TokenDefault &
+    CouldHaveFunctionCall;
+
+export type TVarReassign = {
+    type: "TVarReassign";
+    value: string | boolean | number | null | TokenDefault;
+} & TokenDefault &
+    CouldHaveFunctionCall;

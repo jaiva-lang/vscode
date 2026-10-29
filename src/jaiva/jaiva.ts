@@ -13,6 +13,7 @@ import {
     Tokens,
     Globals,
     Docs,
+    toScopedToken,
 } from "./";
 
 export type RewriteSuggestion = {
@@ -319,6 +320,18 @@ export class SharedValues extends Base {
                             );
                         }
 
+                        const c = Tokens.couldHaveFunctionCallCandidate(token);
+
+                        if (c && c.candidate) {
+                            this.add(
+                                parentRange,
+                                [c.getCandidateValue()],
+                                context,
+                                doc,
+                                rewriteArr,
+                            );
+                        }
+
                         if (hasPropertyOf<Tokens.ImportToken>(token, "isLib")) {
                             const a = this.loadLibraryAt(
                                 token,
@@ -364,10 +377,7 @@ export class SharedValues extends Base {
                                 (scoped.elseIfs == null ||
                                     (Array.isArray(scoped.elseIfs) &&
                                         scoped.elseIfs.length == 0)) && // No else ifs.
-                                !hasPropertyOf<Tokens.TIfStatement>( // It cannot have an if inside.
-                                    otherTokens[0][1][0],
-                                    "elseBody",
-                                )
+                                !toScopedToken(otherTokens[0][1][0]) // No block constructs
                             )
                                 rewriteArr.push({
                                     message:
@@ -655,8 +665,16 @@ function handleFuncCallPossibleRewrite(
     const linesWithC = line?.split(/(?<!\$)@/);
     if (linesWithC) line = linesWithC[0].trim()!;
 
-    console.log(line);
-    console.log(token.originalCall);
+    console.log(line.substring(0, line.length - 1).trim());
+    console.log(token.originalCall.trim());
+
+    if (
+        !line
+            .substring(0, line.length - 1)
+            .trim()
+            .endsWith(token.originalCall.trim())
+    )
+        return;
 
     const args = token.args;
     const max = 5; // one day it will be configurable.
