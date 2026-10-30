@@ -6,7 +6,7 @@ import {
     toMarkdown,
 } from "./jdoc";
 import { JSONObject } from "../../utils";
-import { LineRange, NonGlobalLineRange } from "..";
+import { ScopeRange, NonGlobalScopeRange } from "..";
 
 /**
  * The types that we care about the most
@@ -45,14 +45,14 @@ export type TokenDefault = {
     name: string;
     lineNumber: number;
     toolTip: string | JDoc[];
-    within: LineRange;
+    within: ScopeRange;
 };
 
 export type TTryCatchStatement = {
     type: "TTryCatch";
     try: JSONObject; // TCodeblock
     catch: JSONObject; // TCodeblock
-    catchProperties: NonGlobalLineRange; // So subsequent code can add the "error" variables
+    catchProperties: NonGlobalScopeRange; // So subsequent code can add the "error" variables
 } & TokenDefault;
 
 export type TIfStatement = {
@@ -134,6 +134,7 @@ export type TForLoop = {
 
 /**
  * Special Tokens are those which the extension creates for hover and other stuff.
+ * These stuff, Jaiva CLI never emits.
  * So that are stuff like function parameters or the variables made by colonize loops
  */
 export type SpecialToken = {
@@ -300,7 +301,7 @@ export function docsToMarkdown(token: TokenDefault): string {
 function extractScopedToken(
     value: unknown,
     isCodeblock = false,
-): [LineRange, JSONObject[]] | null {
+): [ScopeRange, JSONObject[]] | null {
     let body: unknown;
     if (!isCodeblock) {
         if (typeof value !== "object" || value === null || !("body" in value)) {
@@ -341,11 +342,11 @@ function extractScopedToken(
  */
 export function toScopedToken(
     value: unknown,
-): [ScopedToken, [LineRange, JSONObject[]][]] | null {
+): [ScopedToken, [ScopeRange, JSONObject[]][]] | null {
     if (typeof value !== "object" || value === null || !("body" in value)) {
         if (hasPropertyOf<TTryCatchStatement>(value, "catch")) {
             // special handling since try catch decided to be special
-            const lines: [LineRange, JSONObject[]][] = [];
+            const lines: [ScopeRange, JSONObject[]][] = [];
             const catchBlock = value.catch;
             const tryBlock = value.try;
             const catchBlockProps = extractScopedToken(catchBlock, true)!;
@@ -391,7 +392,7 @@ export function toScopedToken(
         lineEnd: b.lineEnd,
     } as ScopedToken;
 
-    const lines: [LineRange, JSONObject[]][] = [];
+    const lines: [ScopeRange, JSONObject[]][] = [];
 
     lines.push([[token.lineNumber, token.lineEnd], b.lines]);
 
@@ -418,6 +419,14 @@ export function toScopedToken(
 // No other metadata is extracted really. unless its the case of TUnknownScalar whos handled but not
 // by this type defined below.
 
+/**
+ * Checks whether the given input is a valid candidate to actually recurse into and check
+ * if it containsa  function call. This function does not check if it has a function call itself
+ * but rather if it could such as to not waste work on stuff that don't
+ * @param token The token. or something else
+ * @returns A CouldHaveFunctionCall where you further need to check .isCandidate to validate. Or undefined
+ * if this cannot be one at all.
+ */
 export function couldHaveFunctionCallCandidate(
     token: any,
 ): CouldHaveFunctionCall | undefined {
@@ -449,7 +458,7 @@ export function couldHaveFunctionCallCandidate(
 
     cand.getCandidateValue = () => val;
 
-    cand.candidate = !(
+    cand.isCandidate = !(
         [
             "string",
             "boolean",
@@ -462,7 +471,7 @@ export function couldHaveFunctionCallCandidate(
 }
 
 export type CouldHaveFunctionCall = {
-    candidate: boolean;
+    isCandidate: boolean;
     getCandidateValue: () => any;
 };
 

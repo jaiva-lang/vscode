@@ -104,13 +104,12 @@ export class Diagnostics {
             lineNumber,
             document.lineAt(lineNumber).range.end.character,
         );
-        this.list.add(
-            document,
-            new vs.Diagnostic(
-                new vs.Range(firstCharPos, lastCharPos),
-                err.message,
-                vs.DiagnosticSeverity.Error,
-            ),
+        const diag = new vs.Diagnostic(
+            new vs.Range(firstCharPos, lastCharPos),
+            err.message,
+            vs.DiagnosticSeverity.Error,
         );
+        if (err.message.includes("shout")) diag.code = "missing-excl";
+        this.list.add(document, diag);
     }
 }

@@ -6,7 +6,7 @@ export class AllHandler {
     public shared: j.SharedValues;
     public cli: j.JaivaCLI;
     public completions: providers.Completions = new providers.Completions();
-    private version: string;
+    private version: string; // unused.
     public diagnostics: providers.Diagnostics;
     private identificationProvider: providers.IdentificationProvider =
         new providers.IdentificationProvider();

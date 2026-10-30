@@ -8,20 +8,20 @@ import { RepoLib } from "../repos";
 
 import {
     hasPropertyOf,
-    NonGlobalLineRange,
-    LineRange,
+    ScopeRange,
     Tokens,
     Globals,
     Docs,
     toScopedToken,
+    LineRange,
 } from "./";
 
 export type RewriteSuggestion = {
     token: Tokens.TokenDefault;
     message: string;
     rewriteId: string;
-    lineRange: NonGlobalLineRange;
-    columnRange?: NonGlobalLineRange;
+    lineRange: LineRange;
+    columnRange?: LineRange;
 };
 export type RewriteArr = RewriteSuggestion[];
 
@@ -75,6 +75,10 @@ export class SharedValues extends Base {
 
     constructor() {
         super();
+    }
+
+    public getLibraryMapKeys(): string[] {
+        return Array.from(this.libraryMap.keys());
     }
 
     public loadLibrariesExternal(
@@ -174,6 +178,7 @@ export class SharedValues extends Base {
     }
 
     public write(doc: vs.TextDocument, str: string): void {
+        this.definitionsMap.clear();
         const arr = this.parse(str, Context.NORMAL, doc);
         if (arr == null) return;
         this.tokenList = arr[0];
@@ -215,13 +220,15 @@ export class SharedValues extends Base {
     private loadLibraryAt(
         importTok: null | Tokens.ImportToken,
         name: string,
-        range: LineRange,
+        range: ScopeRange,
         doc: vs.TextDocument,
     ): Tokens.TokenDefault[] {
         const fromLib = importTok?.isLib || importTok == null;
         var tokens = fromLib
             ? (this.libraryMap.get(name)?.tokens ?? [])
             : this.parse(
+                  // Yes we call sync. But its only for other file imports
+                  // imagine trting to make ALL these functiosn async? im not doing that shit.
                   this.externalFileCLI.callSync(
                       this.normalize(doc, importTok?.filePath),
                   ),
@@ -274,7 +281,7 @@ export class SharedValues extends Base {
     }
 
     private add(
-        parentRange: LineRange,
+        parentRange: ScopeRange,
         arr: any[],
         context: Context = Context.NORMAL,
         doc: vs.TextDocument,
@@ -322,7 +329,7 @@ export class SharedValues extends Base {
 
                         const c = Tokens.couldHaveFunctionCallCandidate(token);
 
-                        if (c && c.candidate) {
+                        if (c && c.isCandidate) {
                             this.add(
                                 parentRange,
                                 [c.getCandidateValue()],
@@ -417,7 +424,7 @@ export class SharedValues extends Base {
 
     private others(
         scoped: Tokens.ScopedToken,
-        lineRange: LineRange,
+        lineRange: ScopeRange,
         rewriteArr: RewriteArr,
     ): Tokens.TokenDefault[] {
         if (hasPropertyOf<Tokens.TForLoop>(scoped, "variable")) {

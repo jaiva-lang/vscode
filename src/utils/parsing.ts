@@ -1,5 +1,7 @@
 // stolen from my Find.java in Jaiva lol.
 
+import { array } from "node:stream/iter";
+
 export class Pair<A, B> {
     constructor(
         public readonly first: A,
@@ -10,6 +12,8 @@ export class Pair<A, B> {
 export class SamePair<T> extends Pair<T, T> {}
 
 export interface BracePairs {
+    allClosed: () => boolean;
+    isEmpty: () => boolean;
     closedPairs: SamePair<number>[];
     unclosedBraces: Pair<number, string>[];
     danglingClose: Pair<number, string>[];
@@ -86,6 +90,11 @@ export function bracePairs(line: string): BracePairs {
         closedPairs,
         unclosedBraces: stack,
         danglingClose,
+        allClosed: () => stack.length == 0 && danglingClose.length == 0,
+        isEmpty: () =>
+            closedPairs.length == 0 &&
+            stack.length == 0 &&
+            danglingClose.length == 0,
     };
 }
 
@@ -105,19 +114,6 @@ export function lastOutermostBracePair(line: string): SamePair<number> | null {
     return closed.length === 0 ? null : closed[closed.length - 1];
 }
 
-/**
- * Finds the last index of the given input string in statement, while
- * disregarding input enclosed in quotation marks or inside a set of brackets
- * [] or parentheses ().
- *
- * This is meant for properly splitting nested ternary expressions at the
- * correct places. It can be used elsewhere provided with caution.
- *
- * @param statement The statement to check within.
- * @param input The input to check for.
- * @returns The index of the first character of the last valid occurrence,
- *          or -1 if no valid index is found.
- */
 export function lastIndexOf(statement: string, input: string): number {
     let index = -1;
     let containsIndex = true;
@@ -144,4 +140,70 @@ export function lastIndexOf(statement: string, input: string): number {
 
 export function isInPair(index: number, pairs: SamePair<number>[]): boolean {
     return pairs.some((pair) => index > pair.first && index < pair.second);
+}
+
+export function removeLastPairs(str: string): string {
+    const str2 = bracePairs(str);
+    if (str2.isEmpty()) return str;
+    if (str2 && str2.closedPairs[str2.closedPairs.length - 1].first == 0)
+        return str.substring(1, str.length - 1);
+    return str;
+}
+
+export function split(input: string, separator: string): string[] {
+    const bracePairz = bracePairs(input);
+    const quotePairs = quotationPairs(input);
+
+    let acc = "";
+    const content: string[] = [];
+    let dangling = false;
+    for (let i = 0; i < input.length; i++) {
+        const inBrace = bracePairz.closedPairs.some(
+            (pair) => i >= pair.first && i <= pair.second,
+        );
+        const inQuote = quotePairs.some(
+            (pair) => i >= pair.first && i <= pair.second,
+        );
+
+        // does the separator start here, and are we allowed to split here?
+        const atSeparator =
+            input.startsWith(separator, i) && !dangling && !inBrace && !inQuote;
+
+        if (!atSeparator) {
+            const ch = input[i];
+            if ((ch === '"' || ch === "(") && !(inBrace || inQuote))
+                dangling = true;
+            acc += ch;
+            continue;
+        }
+
+        // we're splitting here — flush and skip past the separator
+        if (acc.length > 0) {
+            content.push(acc);
+            acc = "";
+        }
+        i += separator.length - 1; // loop's i++ handles the rest
+    }
+
+    if (acc.length > 0) {
+        content.push(acc);
+    }
+
+    return content;
+}
+
+export function includes(stri: string, ...arr: string[]): boolean {
+    return arr.some((element) => stri.includes(element));
+}
+
+export function includesWithAddedRegex(
+    stri: string,
+    reg: string,
+    ...arr: string[]
+): boolean {
+    return arr.some(
+        (element) =>
+            stri.includes(element) &&
+            stri.match(new RegExp(reg.replace("${INCLUDE}", element))) != null,
+    );
 }
